@@ -1,0 +1,14 @@
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Java / Maven
+backend/target/
+
+# Environment files
+frontend/.env
+backend/.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
