@@ -21,6 +21,14 @@ export async function fetchMovies() {
   return response.json();
 }
 
+export async function fetchMovieById(id) {
+  const response = await fetch(`${MOVIES_API}/${id}`);
+  if (!response.ok) {
+    throw new Error(await parseError(response, "Could not fetch movie details."));
+  }
+  return response.json();
+}
+
 export async function createMovie(moviePayload) {
   const response = await fetch(MOVIES_API, {
     method: "POST",

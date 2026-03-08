@@ -1,14 +1,12 @@
 import "../src/index.css";
 import { useNavigate } from "react-router-dom";
-import {
-  ChatbotSection,
-  ContinueWatchingSection,
-  HeroBanner,
-  HomeFooter,
-  HomeNav,
-  MovieStrip,
-  RecommendedSection,
-} from "../components/home/index.js";
+import ChatbotSection from "../components/home/ChatbotSection.jsx";
+import ContinueWatchingSection from "../components/home/ContinueWatchingSection.jsx";
+import HeroBanner from "../components/home/HeroBanner.jsx";
+import HomeFooter from "../components/home/HomeFooter.jsx";
+import HomeNav from "../components/home/HomeNav.jsx";
+import MovieStrip from "../components/home/MovieStrip.jsx";
+import RecommendedSection from "../components/home/RecommendedSection.jsx";
 import {
   categoryRows,
   continueWatching,

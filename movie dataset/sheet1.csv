@@ -1,0 +1,170 @@
+imdb_id,title,poster_url,,release_year,rating,votes,country
+tt28259207,Kill,https://m.media-amazon.com/images/M/MV5BZjI1ZjM3NjUtYTc1Ni00ODJmLWI5YjQtMWZiZTAyNTFiZGY1XkEyXkFqcGc@._V1_.jpg,,2023,7.9,7214,IN
+tt27440937,Weapon,https://m.media-amazon.com/images/M/MV5BMzIxMDkzNjMtYWRjYy00MTFkLTk0M2EtY2Q3ZTEwZTI5MTFhXkEyXkFqcGc@._V1_.jpg,,2024,8.7,5165,IN
+tt23864864,Joram,https://m.media-amazon.com/images/M/MV5BOWE4M2Y3YmUtNDhhNy00YjA4LThkMGQtNTZkMjM2ZDRhM2UwXkEyXkFqcGdeQXVyMTYzMTU3Njgx._V1_.jpg,,2023,6.6,2473,IN
+tt11651796,AK vs AK,https://m.media-amazon.com/images/M/MV5BNDJkOTVkYTMtMTk2OC00YTkyLThjMGYtMTdiYWRjYTQ1YTYzXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg,,2020,6.9,15270,IN
+tt14479746,Thar,https://m.media-amazon.com/images/M/MV5BOWY1NjE2MzUtYTVjOC00ZDUxLWIwZDUtMzk5YWQ5ODc5YTI5XkEyXkFqcGdeQXVyMTI1NDEyNTM5._V1_.jpg,,2022,6.1,8030,IN
+tt32368060,Dirty Fellow,https://m.media-amazon.com/images/M/MV5BMGI0MTQ5ODQtNmZiMy00MjY3LWE4ODktYzUwZTFkYmJlNDZjXkEyXkFqcGdeQXVyMTA4MzQ4NzMw._V1_.jpg,,2024,9.8,3258,IN
+tt13510660,Dhamaka,https://m.media-amazon.com/images/M/MV5BNzUyOWU2M2MtMDU1Yy00M2E1LTg3OTktMGRjYTE2MjkzYzUwXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg,,2021,6.8,42656,IN
+tt15073166,IB 71,https://m.media-amazon.com/images/M/MV5BZDk1NWU5MjMtOWY4Zi00YWJhLTlkMDUtYjllMjQwZWE3OGU2XkEyXkFqcGdeQXVyMTY4MjU0NDY3._V1_.jpg,,2023,7.2,10565,IN
+tt14418234,State of Siege: Temple Attack,https://m.media-amazon.com/images/M/MV5BNGNlOWEyZDgtNTZiMi00YjgxLTlkOTUtNGI3ZWM2YzU3ZTU2XkEyXkFqcGdeQXVyMTIzMzg0MTM2._V1_.jpg,,2021,7.7,9750,IN
+tt20724796,Kerosene,https://m.media-amazon.com/images/M/MV5BNGRlODk2NTctNmRjNS00YjhmLTllYzAtMmJhNDY1NjIwOTA5XkEyXkFqcGdeQXVyMTEwOTUyOTg5._V1_.jpg,,2022,6.6,1621,IN
+tt13912632,Sanak,https://m.media-amazon.com/images/M/MV5BODg3NzhlMjktODA2MS00YTJkLWEyYWMtNGYxMzYwYTViMWQwXkEyXkFqcGdeQXVyMTI1NDEyNTM5._V1_.jpg,,2021,6.6,10975,IN
+tt32491118,Big Brother,https://m.media-amazon.com/images/M/MV5BMGMxOTkzZTQtZTFjMC00OGUxLTk3ZWQtYTRjYTJjODZjNDgxXkEyXkFqcGc@._V1_.jpg,,2024,8.2,2006,IN
+tt23752842,The Heist,https://m.media-amazon.com/images/M/MV5BYjBlNjM3NWItMTI2YS00Nzc3LTg3MzgtZGUzYmI5OWI1M2FmXkEyXkFqcGc@._V1_.jpg,,2024,8.3,1362,IN
+tt28362963,Checkmate,https://m.media-amazon.com/images/M/MV5BMWJhZDc2ZmQtNTY3OS00MmE3LWJhMTEtYjllZjhjN2QwZjhjXkEyXkFqcGdeQXVyMTYxNzIxNTQ0._V1_.jpg,,2023,7.8,24544,IN
+tt23058594,Focus,https://m.media-amazon.com/images/M/MV5BZmJlNGU4YWEtZDZkMy00ZjUzLWJhYjQtZWU5NDc4Y2E5NWVkXkEyXkFqcGdeQXVyMjYyOTkyNjM@._V1_.jpg,,2022,7.8,2981,IN
+tt25376056,Keedaa Cola,https://m.media-amazon.com/images/M/MV5BNGIxMWMwMmUtYTI0Zi00MDM0LWIxNzYtODk0Mjg4YzA3ZTI2XkEyXkFqcGdeQXVyMTUyNjIwMDEw._V1_.jpg,,2023,7.4,3323,IN
+tt28696625,Yendira Ee Panchayithi,https://m.media-amazon.com/images/M/MV5BZDM3ZTVhMDktMDExOC00YzU0LWIyNTMtNjViMTM4ZGIzYjdmXkEyXkFqcGdeQXVyMTA1ODY1NzY3._V1_.jpg,,2023,8.2,1116,IN
+tt29515802,S-99,https://m.media-amazon.com/images/M/MV5BNzYyNjQ2ZjMtMjFjZC00MmExLWFmNDQtMTE5Yjk1MjJkZjE3XkEyXkFqcGdeQXVyMTMzODIwNDAw._V1_.jpg,,2024,8.8,2054,IN
+tt13369990,Gully Gang,https://m.media-amazon.com/images/M/MV5BZTE0ZDVkZTQtNzlkOC00OTBlLWE1YTYtZDZjYTIwMGUyOTc3XkEyXkFqcGdeQXVyMTAwNDA4NDky._V1_.jpg,,2022,8.4,2088,IN
+tt15716828,Red Sandal Wood,https://m.media-amazon.com/images/M/MV5BYzM4N2UyMTctODBlOC00M2U4LTk1ZDktZWQ2NDU2YjlhNWU2XkEyXkFqcGdeQXVyMTA4MzQ4NzMw._V1_.jpg,,2023,6.1,1144,IN
+tt14917786,Narasimhapuram,https://m.media-amazon.com/images/M/MV5BYTIyZTNiODctMjA0Mi00ZTU1LTkwYjgtYjAzMTY4Y2QzZjM0XkEyXkFqcGdeQXVyMTMzNzA4MTMx._V1_.jpg,,2021,7.3,2208,IN
+tt15166394,Hi Five: Fun and Gun,https://m.media-amazon.com/images/M/MV5BMGVhNmU2ZmQtOTUyOC00MTA0LTgwMjUtMWQ2NWEwMDk4ZWQ5XkEyXkFqcGdeQXVyMTMzNzA4MTMx._V1_.jpg,,2022,7.8,1819,IN
+tt27850479,Revenge,https://m.media-amazon.com/images/M/MV5BNjQzMTcyZGEtM2IzMi00MzBkLTg3ZjItNmI4ODcxMDhkZWExXkEyXkFqcGdeQXVyMTUwNzQzNzUz._V1_.jpg,,2023,6.9,1356,IN
+tt18280338,Balraju,https://m.media-amazon.com/images/M/MV5BYzBkY2MxYWMtZGYwNC00YTU4LWE1YTEtNDcxODFmZjczOWIwXkEyXkFqcGdeQXVyMTMzNzA4MTMx._V1_.jpg,,2022,7.4,1605,IN
+tt24227752,Raa Raa Penimiti,https://m.media-amazon.com/images/M/MV5BMzBmY2Q3ZDUtNGFkOC00NTEzLTljNmQtMWUzZjJkZDUwMTU3XkEyXkFqcGdeQXVyMTI5MjcxOTc3._V1_.jpg,,2023,6.6,1564,IN
+tt19407476,Bari,https://m.media-amazon.com/images/M/MV5BN2FmM2NjMWQtNjljYi00ZTE0LWFiZjItMzdkMjkzYzhhZGFiXkEyXkFqcGdeQXVyMTEwOTUyOTg5._V1_.jpg,,2022,8.3,1536,IN
+tt15576316,Thirgusomeese,https://m.media-amazon.com/images/M/MV5BNzM1MDA0YmItODAyNC00MjM4LTk1MWItZjBjNjliZWE0ZWI3XkEyXkFqcGdeQXVyMTM2NDUxNzM3._V1_.jpg,,2021,7,1204,IN
+tt25966332,Error 500,https://m.media-amazon.com/images/M/MV5BNDU0YmM5ZmQtZmYzNy00YTA2LTg4MDItMjViNTIwNzM3YjE5XkEyXkFqcGdeQXVyMTUwNzQzNzUz._V1_.jpg,,2023,7.4,2067,IN
+tt18246372,2020 Golmaal,https://m.media-amazon.com/images/M/MV5BOTdlNzcyZDMtOTg2MS00ZmE2LWEwZDYtYmYxMjJmOGQ2MWMwXkEyXkFqcGdeQXVyMTQ5MTE1NDg1._V1_.jpg,,2022,6.5,1200,IN
+tt3083016,Beverly Hills Cop: Axel F,https://m.media-amazon.com/images/M/MV5BMDVhYWNkNTUtZWVjMC00Y2M1LWEzNmItZjFiMzA4ZjNiODI4XkEyXkFqcGc@._V1_.jpg,,2024,6.5,52304,US
+tt17279496,Civil War,https://m.media-amazon.com/images/M/MV5BYTYyODhlODktYjUzNC00NjUyLWI1MzYtNmI0MTY3YTUxYjY2XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2024,7.1,135852,US
+tt19864802,Land of Bad,https://m.media-amazon.com/images/M/MV5BMzkyOTUzYTUtY2UzYS00MjY4LTljZWYtYzMyMmZlMWYwMjQ5XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg,,2024,6.6,29772,US
+tt15314262,The Beekeeper,https://m.media-amazon.com/images/M/MV5BZjQwYjU3OTYtMWVhMi00N2Y2LWEzMDgtMzViN2U4NWI1NmI3XkEyXkFqcGdeQXVyODk2NDQ3MTA@._V1_.jpg,,2024,6.4,116590,US
+tt5177120,The Ministry of Ungentlemanly Warfare,https://m.media-amazon.com/images/M/MV5BOWI5YTlkNTktOTJlMC00MmYyLThkNzQtYmExOGZkZDE1ZjgwXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_.jpg,,2024,6.8,53722,US
+tt4919268,Bad Boys: Ride or Die,https://m.media-amazon.com/images/M/MV5BY2U5YmQ3YjgtM2I2OC00YmM5LTkyM2MtN2I5Zjg2MDE0ODkwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg,,2024,6.9,35630,US
+tt14539740,Godzilla x Kong: The New Empire,https://m.media-amazon.com/images/M/MV5BY2QwOGE2NGQtMWQwNi00M2IzLThlNWItYWMzNGQ5YWNiZDA4XkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_.jpg,,2024,6.1,90891,US
+tt30150917,"Justice League: Crisis on Infinite Earths, Part Three",https://m.media-amazon.com/images/M/MV5BNzM2MWM1M2UtZjk2NS00MGZkLTkxZmUtZjZiMjRjYWEwNzRkXkEyXkFqcGdeQXVyMTgxMjAyNDQ5._V1_.jpg,,2024,6,1206,US
+tt8242084,My Spy,https://m.media-amazon.com/images/M/MV5BNzMyOWRjYjUtMjc2OC00MWUyLWEzODktYWZlZDYxYjk4MDViXkEyXkFqcGdeQXVyODE0OTU5Nzg@._V1_.jpg,,2020,6.4,35829,US
+tt21692408,Kung Fu Panda 4,https://m.media-amazon.com/images/M/MV5BZDY0YzI0OTctYjVhYy00MTVhLWE0NTgtYTRmYTBmOTE3YTViXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg,,2024,6.3,48536,US
+tt13923084,Boy Kills World,https://m.media-amazon.com/images/M/MV5BNmYyM2VhM2UtYmEzNi00M2RmLTkzYWQtZGQ5MjI2MzQzMWMyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2023,6.4,20413,US
+tt1136617,The Killer,https://m.media-amazon.com/images/M/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg,,2023,6.7,191138,US
+tt6264654,Free Guy,https://m.media-amazon.com/images/M/MV5BOTY2NzFjODctOWUzMC00MGZhLTlhNjMtM2Y2ODBiNGY1ZWRiXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg,,2021,7.1,434444,US
+tt13452446,Damsel,https://m.media-amazon.com/images/M/MV5BODRiMTA4NGMtOTQzZC00OWFjLWFmODctMjY2ZTcwYjI5NDMyXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_.jpg,,2024,6.1,93491,US
+tt11291274,The Unbearable Weight of Massive Talent,https://m.media-amazon.com/images/M/MV5BNDM2ODNiMWItOWRkNS00ODE3LWE2OGYtNTZkMDJkOWI1ODMxXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_.jpg,,2022,7,156632,US
+tt29195117,Justice League: Crisis on Infinite Earths - Part One,https://m.media-amazon.com/images/M/MV5BMzg1MWQ5NzgtZjlhZi00MjU4LThmZDUtOWQ5ZjMzN2ZlODNkXkEyXkFqcGdeQXVyMTk2OTAzNTI@._V1_.jpg,,2024,6.2,5809,US
+tt6722400,Fast Charlie,https://m.media-amazon.com/images/M/MV5BNGVlZDAyNjYtMjBkNi00MWJhLTliOWUtZTI1NzFjYWY1ZDQxXkEyXkFqcGdeQXVyNzc3MDg1NTM@._V1_.jpg,,2023,6,21463,US
+tt5034838,Godzilla vs. Kong,https://m.media-amazon.com/images/M/MV5BOTI3NzNhNDItYWY0My00ZmE3LTgxMmYtYzQzZWU2NDcxYzVjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg,,2021,6.3,247381,US
+tt17024450,The Equalizer 3,https://m.media-amazon.com/images/M/MV5BYjZjYTllOWItYjUxMC00NTA0LWI1ZjItNjE5YjVhZjRmYmYwXkEyXkFqcGdeQXVyMTcwOTQzOTYy._V1_.jpg,,2023,6.8,125504,US
+tt16431870,The Family Plan,https://m.media-amazon.com/images/M/MV5BZWQzZWFmOWMtODM4Ni00YjYwLWI4ZTYtOTkwZmYyMzFkN2E2XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg,,2023,6.3,45103,US
+tt3915174,Puss in Boots: The Last Wish,https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_.jpg,,2022,7.8,181456,US
+tt13320622,The Lost City,https://m.media-amazon.com/images/M/MV5BMmIwYzFhODAtY2I1YS00ZDdmLTkyYWQtZjI5NDIwMDc2MjEyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg,,2022,6.1,162328,US
+tt7888964,Nobody,https://m.media-amazon.com/images/M/MV5BMjM5YTRlZmUtZGVmYi00ZjE2LWIyNzAtOWVhMDk1MDdkYzhjXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_.jpg,,2021,7.4,329840,US
+tt7991608,Red Notice,https://m.media-amazon.com/images/M/MV5BZmRjODgyMzEtMzIxYS00OWY2LTk4YjUtMGMzZjMzMTZiN2Q0XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2021,6.3,322390,US
+tt11866324,Prey,https://m.media-amazon.com/images/M/MV5BMDBlMDYxMDktOTUxMS00MjcxLWE2YjQtNjNhMjNmN2Y3ZDA1XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg,,2022,7.1,231236,US
+tt8589698,Teenage Mutant Ninja Turtles: Mutant Mayhem,https://m.media-amazon.com/images/M/MV5BYzE4MTllZTktMTIyZS00Yzg1LTg1YzAtMWQwZTZkNjNkODNjXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg,,2023,7.2,67043,US
+tt5761544,Kandahar,https://m.media-amazon.com/images/M/MV5BMjNiNDg2OWYtOGEzNy00M2E5LTgxZjItNzVmN2VmNTg3MzBhXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_.jpg,,2023,6.1,36002,US
+tt1464335,Uncharted,https://m.media-amazon.com/images/M/MV5BMWEwNjhkYzYtNjgzYy00YTY2LThjYWYtYzViMGJkZTI4Y2MyXkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_.jpg,,2022,6.3,264747,US
+tt12818328,Hundreds of Beavers,https://m.media-amazon.com/images/M/MV5BNTk2NWQ4MzQtNGYyMS00NGUzLTk4MDAtNjc1ZTRjNTI3ZTc0XkEyXkFqcGdeQXVyNTU4NzAyNDg@._V1_.jpg,,2022,7.8,4098,US
+tt7737786,Greenland,https://m.media-amazon.com/images/M/MV5BMzcyMzU4MDUtM2JhOC00ZDg2LTg5MGMtZjc2OGMyMjhlMGE2XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2020,6.4,137104,US
+tt8244784,The Hunt,https://m.media-amazon.com/images/M/MV5BNjg4MjRhZjgtNTIxOS00MmRjLTg4NTEtNjBkNzkwZjAxMjMyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2020,6.6,130749,US
+tt11358390,Renfield,https://m.media-amazon.com/images/M/MV5BNWFlY2RhZWYtYWNmYS00MmQyLThiYTctYmFmMDVhNjhlMTI3XkEyXkFqcGdeQXVyNTA3MTU2MjE@._V1_.jpg,,2023,6.4,98768,US
+tt11456054,Run Hide Fight,https://m.media-amazon.com/images/M/MV5BNTkyMzMxN2MtNjFjYS00MmRjLWJjMjctYzBlMGZiM2I1MmQ2XkEyXkFqcGdeQXVyNjIwNjI4NTA@._V1_.jpg,,2020,6.3,27850,US
+tt0293429,Mortal Kombat,https://m.media-amazon.com/images/M/MV5BY2ZlNWIxODMtN2YwZi00ZjNmLWIyN2UtZTFkYmZkNDQyNTAyXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_.jpg,,2021,6,191979,US
+tt8936646,Extraction,https://m.media-amazon.com/images/M/MV5BMDJiNzUwYzEtNmQ2Yy00NWE4LWEwNzctM2M0MjE0OGUxZTA3XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg,,2020,6.8,266856,US
+tt3794354,Sonic the Hedgehog,https://m.media-amazon.com/images/M/MV5BNTdmNmI4MzQtZTAzNS00MjhjLWEzOGQtZjI1NDNjZjk4N2JjXkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_.jpg,,2020,6.5,161927,US
+tt2463208,The Adam Project,https://m.media-amazon.com/images/M/MV5BOWM0YWMwMDQtMjE5NS00ZTIwLWE1NWEtODViMWZjMWI2OTU3XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg,,2022,6.7,235016,US
+tt10275534,To Catch a Killer,https://m.media-amazon.com/images/M/MV5BNGMyZjM5YWUtMjVmMC00NmQ2LTgyMWEtNjYzZDFkYTIyMjFhXkEyXkFqcGdeQXVyMTAyMjQ3NzQ1._V1_.jpg,,2023,6.6,41504,US
+tt5109280,Raya and the Last Dragon,https://m.media-amazon.com/images/M/MV5BZWNiOTc4NGItNGY4YS00ZGNkLThkOWEtMDE2ODcxODEwNjkwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2021,7.3,174133,US
+tt6048922,Greyhound,https://m.media-amazon.com/images/M/MV5BZTFkZjYxNWItZmE2MC00MGE4LWIxYTgtZmIzOWM1YmI2YWEzXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg,,2020,7,116725,US
+tt7713068,Birds of Prey,https://m.media-amazon.com/images/M/MV5BMzQ3NTQxMjItODBjYi00YzUzLWE1NzQtZTBlY2Y2NjZlNzkyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2020,6.1,267012,US
+tt19500164,Nimona,https://m.media-amazon.com/images/M/MV5BNDJkNzQzODQtM2Q0MC00MWE4LTlkMjMtNWZmZWQyMTYwZGRmXkEyXkFqcGdeQXVyMTY1MTAyOTk1._V1_.jpg,,2023,7.5,51102,US
+tt13314558,Day Shift,https://m.media-amazon.com/images/M/MV5BYWI2ZDRjYjEtOWJiOS00NWVjLWI1MjAtNWNiMzAwNGFmNjljXkEyXkFqcGdeQXVyODEwMTc2ODQ@._V1_.jpg,,2022,6.1,91497,US
+tt8629748,Spenser Confidential,https://m.media-amazon.com/images/M/MV5BMTdkOTEwYjMtNDA1YS00YzVlLTg0NWUtMmQzNDZhYWUxZmIyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2020,6.2,98975,US
+tt5315210,Lou,https://m.media-amazon.com/images/M/MV5BYzdjMDViYTktM2QyZS00ZGNmLWFlMTctYTliZTUwMWM3YTMwXkEyXkFqcGdeQXVyMTE5MTg5NDIw._V1_.jpg,,2022,6.1,34232,US
+tt10298810,Lightyear,https://m.media-amazon.com/images/M/MV5BYTg2Zjk0ZTctM2ZmMi00MDRmLWJjOGYtNWM0YjBmZTBjMjRkXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg,,2022,6.1,125660,US
+tt20916568,The Wrath of Becky,https://m.media-amazon.com/images/M/MV5BZDUzMDA1ZjctZjJkNi00YmRmLTk5NzctNjMwNTEzMjAwMTE3XkEyXkFqcGdeQXVyMzQwMTY2Nzk@._V1_.jpg,,2023,6.1,13262,US
+tt11145118,Creed III,https://m.media-amazon.com/images/M/MV5BYzIxOTk1NDQtMzJlOC00ODZlLWE1YTAtNTA5ODZlZmZmMDBhXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_.jpg,,2023,6.7,94972,US
+tt12003946,Violent Night,https://m.media-amazon.com/images/M/MV5BYzg2NWNhOWItYjA3Yi00MzhhLTg4ZmItYzM3ZTIwN2U0ZGQ5XkEyXkFqcGdeQXVyMzEyMDQzNzY@._V1_.jpg,,2022,6.7,100770,US
+tt12731980,Old Henry,https://m.media-amazon.com/images/M/MV5BM2ViYWUzODctMGU2ZS00NzRjLThmOTAtYTUyOTE3OTFkYmI2XkEyXkFqcGdeQXVyNjc3MjE2MTY@._V1_.jpg,,2021,7.2,37995,US
+tt6246322,Don't Breathe 2,https://m.media-amazon.com/images/M/MV5BNjgzMjQ4NjMtNzQ5OS00MzE4LWIxMmMtNjI0YjM1ZWZiN2U2XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg,,2021,6,72788,US
+tt7638348,Boss Level,https://m.media-amazon.com/images/M/MV5BNTVkODdiMjAtNmQ5Yy00OThhLTg4MDItYTZlYTFmN2E0M2M1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2020,6.8,80304,US
+tt32308418,How to Rob a Bank,https://m.media-amazon.com/images/M/MV5BMWIxOGYzY2UtMDhlYi00ZjM5LThmNDktNmIzNWNhMjc3MjE5XkEyXkFqcGc@._V1_.jpg,,2024,6.6,2299,US
+tt3513500,Chip 'n Dale: Rescue Rangers,https://m.media-amazon.com/images/M/MV5BZjBlMjIxN2ItNTMyNi00NDk5LWFhMzEtNzdiODE0Y2M4MWI2XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg,,2022,7,47501,US
+tt8912936,DC League of Super-Pets,https://m.media-amazon.com/images/M/MV5BZTIyNzc3NzMtNGE5YS00Yjg5LTk5MDMtOTUxMzk1ZTBkOTgwXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg,,2022,7.1,76409,US
+tt9288046,The Sea Beast,https://m.media-amazon.com/images/M/MV5BODkyYTRlMDItMDlhMC00MzkzLWI3NzQtOGVlMjdjYThlNDM3XkEyXkFqcGdeQXVyMTA1OTcyNDQ4._V1_.jpg,,2022,7,59155,US
+tt9139586,Arkansas,https://m.media-amazon.com/images/M/MV5BZDFkNTUzMzgtODU5Ny00MWZiLWE2YzQtMjM1NGY0ZWQ3M2YxXkEyXkFqcGdeQXVyNzg5MzIyOA@@._V1_.jpg,,2020,6,15663,US
+tt7737528,Kate,https://m.media-amazon.com/images/M/MV5BN2IyYzI4YmQtNzBmMi00Mjg3LWI4NTMtNmZjNjk3YjIwZmJhXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2021,6.2,71328,US
+tt6878306,News of the World,https://m.media-amazon.com/images/M/MV5BMDNlNmVlNDItMjE3Yi00ZTA3LWIyOTktNDhhMGFlZjk5ZDQ0XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg,,2020,6.8,96309,US
+tt5748448,Copshop,https://m.media-amazon.com/images/M/MV5BMTZjZWYzYjMtMmNlYi00MTdkLWI4OTMtMmVhM2QzZjZiZTZiXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_.jpg,,2021,6.2,39748,US
+tt7550000,Project Power,https://m.media-amazon.com/images/M/MV5BYzBhOWU4ODAtZDYzYi00NDU1LWIzZWUtNDZmMDgxODljZTVmXkEyXkFqcGdeQXVyMTAwMzM3NDI3._V1_.jpg,,2020,6,98556,US
+tt10314450,Becky,https://m.media-amazon.com/images/M/MV5BYTlhYThkYjItZDdmYi00ZGRhLTg1OTAtMDRhZTM5ZWI5NGZiXkEyXkFqcGdeQXVyMjA0MDk5Mzg@._V1_.jpg,,2020,6,25403,US
+tt14416430,Paradox Effect,https://m.media-amazon.com/images/M/MV5BY2RhYWY1NTItZDE4MS00MjQ4LWI2YzUtMzkxODYyMDkwZDRiXkEyXkFqcGdeQXVyNDg3NDQyODA@._V1_.jpg,,2023,6.4,3150,US
+tt7575046,Riddle of Fire,https://m.media-amazon.com/images/M/MV5BODM4YjlmOGYtZDBmZS00ODdkLWJkNGUtZmQyZGI4MWUzYjQzXkEyXkFqcGdeQXVyMzk3NzU1Mzg@._V1_.jpg,,2023,6.6,1232,US
+tt1838556,Honest Thief,https://m.media-amazon.com/images/M/MV5BZjEwNjYyMTMtODc5Yi00NTg5LTkwMzAtZTkyOTcyNTFkMGIyXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_.jpg,,2020,6,58340,US
+tt14324650,"Batman: The Long Halloween, Part One",https://m.media-amazon.com/images/M/MV5BNDBkYTJjZjgtNDlhNi00ZTE1LWI2NmYtMDBjMDUzOWMwNzQwXkEyXkFqcGdeQXVyMTEyNzgwMDUw._V1_.jpg,,2021,7.2,20317,US
+tt5012504,Injustice,https://m.media-amazon.com/images/M/MV5BYzA3ZmI1NzMtMTcxMi00ODg4LWFhMGItMTE2ZjIxODUzZTFiXkEyXkFqcGdeQXVyMTA1NzAwODMz._V1_.jpg,,2021,6.4,16340,US
+tt11466222,Jackass Forever,https://m.media-amazon.com/images/M/MV5BNTdmMDNmYmItOWFmNC00YzdkLWIyZWMtMGRlMTQyZDZmNDU0XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2022,6.8,52266,US
+tt21440780,How to Blow Up a Pipeline,https://m.media-amazon.com/images/M/MV5BYmQyOGQxMGQtNzVjMy00ZmQ2LTg5NzAtZTNkNDMzODkyZDgzXkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_.jpg,,2022,6.9,10543,US
+tt12851396,Trollhunters: Rise of the Titans,https://m.media-amazon.com/images/M/MV5BZjFkODAxZjEtMTYzMy00NzNmLWJhNjItOWFmNmY1NThjYzgwXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg,,2021,6.6,6150,US
+tt20192230,Green Lantern: Beware My Power,https://m.media-amazon.com/images/M/MV5BNzI4NWRiYjUtYjQ3Ni00YWUyLTg4YzUtOTk3OTViNzNiYjYyXkEyXkFqcGdeQXVyMTEyNzgwMDUw._V1_.jpg,,2022,6.2,5106,US
+tt9784708,Rise of the Teenage Mutant Ninja Turtles: The Movie,https://m.media-amazon.com/images/M/MV5BZmIxYmFlNjQtYmU0NC00MWMzLTkyYTktYTBjZmE5NDRlODEyXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg,,2022,6.2,7140,US
+tt13804084,Justice Society: World War II,https://m.media-amazon.com/images/M/MV5BMjQ4Njk5ODMtNjZhMC00OTRjLTg3NzktYjViNmE1ZWE5MzhlXkEyXkFqcGdeQXVyMTEyNzgwMDUw._V1_.jpg,,2021,6.4,9335,US
+tt14402926,"Batman: The Long Halloween, Part Two",https://m.media-amazon.com/images/M/MV5BOThjY2UzNDUtYWMzZC00MjJlLThmZTktZTY5ZjI1N2FiYTU5XkEyXkFqcGdeQXVyMTAwMjYyMjQ2._V1_.jpg,,2021,7.2,17101,US
+tt8851668,The Lovebirds,https://m.media-amazon.com/images/M/MV5BNzU1ZTE4YzAtOWNkYi00YWE4LThmY2YtMDNlYzU2ZTgxYTc2XkEyXkFqcGdeQXVyODQzNTE3ODc@._V1_.jpg,,2020,6.1,27906,US
+tt9580138,Mortal Kombat Legends: Scorpion's Revenge,https://m.media-amazon.com/images/M/MV5BNzY3YTUwYTQtNjkwNy00OTAyLWE0OWEtYmE3MGIyOWZkODY1XkEyXkFqcGdeQXVyMjkyNzYwMTc@._V1_.jpg,,2020,7.4,19722,US
+tt10661710,Born a Champion,https://m.media-amazon.com/images/M/MV5BZjRhOGYxNjMtNmRkMi00OWRlLTlkZjgtYWE3NzVkYTllZGQ1XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_.jpg,,2021,6.8,4756,US
+tt21477618,Mortal Kombat Legends: Snow Blind,https://m.media-amazon.com/images/M/MV5BNGFjZmY0OTAtYmNiNy00YzIzLWFlMjgtYWQwOWYyMzkyODI5XkEyXkFqcGdeQXVyMTEzODQxNzQ1._V1_.jpg,,2022,6.7,3818,US
+tt6060444,The Paper Tigers,https://m.media-amazon.com/images/M/MV5BMDE0NDM0N2EtZDE5MS00Mzk0LWE5MWMtMjliODJkOTI4Y2FkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2020,6.3,5362,US
+tt14901058,Mortal Kombat Legends: Battle of the Realms,https://m.media-amazon.com/images/M/MV5BMDU0ZDkwMzktZDA0MC00MTc5LWE1MzEtYzg2MTU5ZWE4MTU1XkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_.jpg,,2021,6.5,8345,US
+tt12885852,Batman: Soul of the Dragon,https://m.media-amazon.com/images/M/MV5BYmQ4YjZlZjAtYzljOS00ZjViLWE1NGYtMzlmZDZjZTcxYzRiXkEyXkFqcGdeQXVyMTEyNzgwMDUw._V1_.jpg,,2021,6.1,7476,US
+tt14219522,Dying Is Easy,https://m.media-amazon.com/images/M/MV5BYmUwYjU5MTgtZTg3Mi00NzVmLThmMjktMTY4OTkwMjk2YzY1XkEyXkFqcGdeQXVyNjMxOTE5MTM@._V1_.jpg,,2021,7.3,1048,US
+tt6539992,Embattled,https://m.media-amazon.com/images/M/MV5BOGFlYzEyZjUtZmM4Zi00ZGJjLWFjYTUtN2FhNDcwMDVkOTlmXkEyXkFqcGdeQXVyMTE1MzI2NzIz._V1_.jpg,,2020,6.5,3761,US
+tt13622118,Cryptozoo,https://m.media-amazon.com/images/M/MV5BYjM2ODIxMzMtYzE2NS00Njg3LTliYTYtYjRjZGMwZTQ0YzkwXkEyXkFqcGdeQXVyNjczMzgwMDg@._V1_.jpg,,2021,6.4,2179,US
+tt14957270,"The Good, the Bart, and the Loki",https://m.media-amazon.com/images/M/MV5BOTI1NTM0NmYtNzZmMy00ZWJkLTliNDUtZmExMjRlY2ViNmM3XkEyXkFqcGdeQXVyMjMxOTcxOTI@._V1_.jpg,,2021,6.1,4281,US
+tt12876132,Deathstroke: Knights & Dragons - The Movie,https://m.media-amazon.com/images/M/MV5BMWQ4MzUyZDQtNmY0OC00ZjUyLTljZDMtYTYwM2U1ZjE3MTE3XkEyXkFqcGdeQXVyNDU4NzA4NDk@._V1_.jpg,,2020,6.3,4259,US
+tt11348164,Iké Boys,https://m.media-amazon.com/images/M/MV5BMTUwZWFkNGQtNmNlMi00ZWE5LWEzMWQtMjczZmY5NWQwNmM3XkEyXkFqcGdeQXVyMzQwMTY2Nzk@._V1_.jpg,,2021,6.3,3332,US
+tt14577038,DC Showcase: Kamandi: The Last Boy on Earth!,https://m.media-amazon.com/images/M/MV5BMWI5MWI3NjktZjQyOC00MDJkLTg1NDctNGVjMjQwYzkzMjVhXkEyXkFqcGdeQXVyNTAxMzQxMDE@._V1_.jpg,,2021,6.5,1055,US
+tt12272414,DC Showcase: Adam Strange,https://m.media-amazon.com/images/M/MV5BNTJlOWQyZmUtZThmMy00MGVmLThhM2UtNjFlNWIzZDBmYTA5XkEyXkFqcGdeQXVyNTAxMzQxMDE@._V1_.jpg,,2020,6.3,1457,US
+tt9854058,Shadows,https://m.media-amazon.com/images/M/MV5BMmFjMTkwYjItOWJmZi00NzgyLTllYjktZmU0ZmVmYjg5ZWFkXkEyXkFqcGdeQXVyNDAzNjgzNw@@._V1_.jpg,,2022,6.1,1011,US
+tt13073252,The Hijacking of Flight 375,https://m.media-amazon.com/images/M/MV5BY2VjMTczNzMtY2MzNy00NzdkLWIzOWUtMzk4ZWI4MWRkZmQyXkEyXkFqcGdeQXVyNDIwNDUwMw@@._V1_.jpg,,2023,7.3,1271,BR
+tt14111726,Cabras da Peste,https://m.media-amazon.com/images/M/MV5BYzRmOTYyZDgtZWJmMy00OTI1LWExMjgtZjRmYTJiNzgwMGIwXkEyXkFqcGdeQXVyNjEwNTM2Mzc@._V1_.jpg,,2021,6.1,2044,BR
+tt2222042,Love and Monsters,https://m.media-amazon.com/images/M/MV5BYWVkMWEyMDUtZTVmOC00MTYxLWE1ZTUtNjk4M2IzMjY2OTIxXkEyXkFqcGdeQXVyMDk5Mzc5MQ@@._V1_.jpg,,2020,6.9,147174,CA
+tt11832046,PAW Patrol: The Movie,https://m.media-amazon.com/images/M/MV5BZDM0ZDM5M2YtNGViMC00NTgyLWJlYTMtYWM4YTQxYmExOTc2XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_.jpg,,2021,6.1,8520,CA
+tt7149730,The Silencing,https://m.media-amazon.com/images/M/MV5BYjE2MjIwMmYtM2ZiMy00MzdmLTkyNTYtNmFiNjM5MDJhMGVmXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg,,2020,6.3,35012,CA
+tt3215824,Those Who Wish Me Dead,https://m.media-amazon.com/images/M/MV5BMDAxMmQ0NTAtNDllNC00ZjE2LTlkNjUtMmExNmY0MmNkMDQ0XkEyXkFqcGdeQXVyNzYyOTM1ODI@._V1_.jpg,,2021,6,73409,CA
+tt10307440,The Decline,https://m.media-amazon.com/images/M/MV5BMDYxNjk5YTYtZWMzNy00YWQzLTk1NTUtODRhOGNhYWY4MGE1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg,,2020,6,9946,CA
+tt10648342,Thor: Love and Thunder,https://m.media-amazon.com/images/M/MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2022,6.2,408041,AU
+tt9286908,High Ground,https://m.media-amazon.com/images/M/MV5BM2NmOWI0NTktNDZkMS00ZDlkLTgxOGUtMjU4NWEwODg5MTNlXkEyXkFqcGdeQXVyMTUzMzU4Nw@@._V1_.jpg,,2020,6.5,2593,AU
+tt9772374,Bloody Hell,https://m.media-amazon.com/images/M/MV5BZjk4MDBmMTAtODFkOS00NWE3LWI4ZTktMjY0OWU1ODM4MWVmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2020,6.6,10741,AU
+tt10508258,The Red Ghost,https://m.media-amazon.com/images/M/MV5BNDJjZGVmN2UtMGJkYi00YTU4LThhZTgtOWNkYWI0NmU3MjM1XkEyXkFqcGdeQXVyMjI4MjA3NDY@._V1_.jpg,,2020,6.1,2268,RU
+tt11890562,Concrete shark,https://m.media-amazon.com/images/M/MV5BMDQwNmJmMDUtMDRhMy00YWNjLTk3NDEtYzg2Y2FjMjFhMjA5XkEyXkFqcGdeQXVyNDcwNDE0Nzk@._V1_.jpg,,2020,6.6,1107,RU
+tt30395619,Demon Slayer: Kimetsu No Yaiba - To the Hashira Training,https://m.media-amazon.com/images/M/MV5BNWFkNzI5NDQtY2QyZS00NGE2LWJiNDEtMTI5ZTFmNDE0ZjcwXkEyXkFqcGdeQXVyNjk1NzU1Mjk@._V1_.jpg,,2024,6.9,6212,JP
+tt9471678,Ultraman: Rising,https://m.media-amazon.com/images/M/MV5BNDE2NzQ5N2YtMTlkNy00ODI2LWEyZDctODY4OTgxMWMxYmE2XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg,,2024,6.9,4246,JP
+tt11032374,Demon Slayer: Kimetsu no Yaiba - The Movie: Mugen Train,https://m.media-amazon.com/images/M/MV5BODI2NjdlYWItMTE1ZC00YzI2LTlhZGQtNzE3NzA4MWM0ODYzXkEyXkFqcGdeQXVyNjU1OTg4OTM@._V1_.jpg,,2020,8.2,75506,JP
+tt14331144,Jujutsu Kaisen 0,https://m.media-amazon.com/images/M/MV5BODM0NmVjMzUtOTJhNi00N2ZhLWFkYmMtYmZmNjRiY2M1YWY4XkEyXkFqcGdeQXVyOTgxOTA5MDg@._V1_.jpg,,2021,7.8,40729,JP
+tt26537229,Demon Slayer: Kimetsu No Yaiba - To the Swordsmith Village,https://m.media-amazon.com/images/M/MV5BZDZiZTZhMzgtYTY0ZC00OGUyLWE2NzgtMmM4MjA1YjUxN2YyXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg,,2023,7.5,12313,JP
+tt24478470,City Hunter,https://m.media-amazon.com/images/M/MV5BNWMyMmY5YjItMDIwNS00MWVjLWFlMDgtYWMwNTRiMjk0NzVjXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg,,2024,6.3,4317,JP
+tt16183464,One Piece Film: Red,https://m.media-amazon.com/images/M/MV5BODY4OWM5M2UtM2Y1Yi00YjAyLTlhMDktMDkzZjFmMjI5MmI5XkEyXkFqcGdeQXVyMTA1NjQyNjkw._V1_.jpg,,2022,6.8,23062,JP
+tt26684398,Spy x Family Code: White,https://m.media-amazon.com/images/M/MV5BMjU5YzU4YmMtNGM2Mi00ZThkLTljMGItYjhmYmQ1NjhhNjc5XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg,,2023,7.4,3082,JP
+tt22868844,Black Clover: Sword of the Wizard King,https://m.media-amazon.com/images/M/MV5BMjU0MWMzNTctMjM5MC00MmVhLWIzZjQtYzk3OGRiYjQ2NDk2XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg,,2023,7.4,7971,JP
+tt14614892,Dragon Ball Super: Super Hero,https://m.media-amazon.com/images/M/MV5BZmFjNzkwOGYtMzBlYS00NmI4LWIwOTAtMDhhMjY4ZDkwNzI0XkEyXkFqcGdeQXVyODUyNjMyOTE@._V1_.jpg,,2022,7.1,15286,JP
+tt16492678,Demon Slayer: Kimetsu no Yaiba - Tsuzumi Mansion Arc,https://m.media-amazon.com/images/M/MV5BODQyMTI4MTEtYWVjYy00NTM3LWFhYmUtZDNlZDVlZDAzY2M1XkEyXkFqcGdeQXVyMjU0ODQ5NTA@._V1_.jpg,,2021,8.8,25251,JP
+tt13544716,My Hero Academia: World Heroes' Mission,https://m.media-amazon.com/images/M/MV5BNDQ3MTMyNTktZWM0YS00MTQ3LWEwYTItYmViYjZmYmFlOGI3XkEyXkFqcGdeQXVyNDYzNDg2MTM@._V1_.jpg,,2021,7.1,5751,JP
+tt10737918,Shin Ultraman,https://m.media-amazon.com/images/M/MV5BNTIyNDAzMGQtYmQ0YS00OWE2LWJjZjgtY2M3NmU4YmYxMDQ5XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg,,2022,6.4,3934,JP
+tt15028452,Baby Assassins,https://m.media-amazon.com/images/M/MV5BMmU2MDMxNjMtMjI0YS00ZjFlLTk4MTAtMGFlYzNmMjg0YmYzXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg,,2021,6.4,1240,JP
+tt16360006,Bubble,https://m.media-amazon.com/images/M/MV5BYmIxODliYmItNmU2OS00NzU2LTkwZWMtZTc4ZDRmOGRhYWI3XkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg,,2022,6.4,8192,JP
+tt15467380,That Time I Got Reincarnated as a Slime the Movie: Scarlet Bond,https://m.media-amazon.com/images/M/MV5BZDk1NGNmNWItYWJmZi00N2NhLTgwNDUtNDczZjM0NjczMmUzXkEyXkFqcGdeQXVyNjM0MTI4Mw@@._V1_.jpg,,2022,6.8,1949,JP
+tt16492636,Demon Slayer: Kimetsu no Yaiba - Asakusa Arc,https://m.media-amazon.com/images/M/MV5BYWUxNDYxOTktMGVmNC00ZWRlLThkMjktOTY3YTY1NzQxZjI3XkEyXkFqcGdeQXVyNjg1MjAwNTQ@._V1_.jpg,,2021,8.6,3992,JP
+tt27521477,Detective Conan: Black Iron Submarine,https://m.media-amazon.com/images/M/MV5BNDhhM2IwYWMtN2ExYy00ZDhhLTg2MmQtZjhmNmQxMWM3ZTg3XkEyXkFqcGdeQXVyNzEyMDQ1MDA@._V1_.jpg,,2023,7.2,2071,JP
+tt11923304,Tokyo Revengers,https://m.media-amazon.com/images/M/MV5BYmE4NTY3MDUtNTc3Mi00ODQ2LTljZGQtZThiNjhlZmI4OTcyXkEyXkFqcGdeQXVyMTA5NzUzODM4._V1_.jpg,,2021,6.5,1961,JP
+tt11819890,Pokémon the Movie: Secrets of the Jungle,https://m.media-amazon.com/images/M/MV5BMTRmOGE4ZTgtODc5YS00YTdmLWJjZDUtNWExODA5NTgyNGY3XkEyXkFqcGdeQXVyNzYzNjg0NDk@._V1_.jpg,,2020,6.4,2561,JP
+tt10766468,Gintama: The Final,https://m.media-amazon.com/images/M/MV5BNWIwNjI2ZDMtNTJmNy00YTkxLTg0MmUtMTMyMmZmNDYzMmIyXkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg,,2021,8.5,3059,JP
+tt9310328,Altered Carbon: Resleeved,https://m.media-amazon.com/images/M/MV5BMzQ4OTA4YjYtMjQ5My00ZGEzLTkyOGYtNzk4NjZlYTc5MTBjXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg,,2020,6.4,7016,JP
+tt13424422,Sword Art Online: Progressive - Aria of a Starless Night,https://m.media-amazon.com/images/M/MV5BMTVlNzM0YjktNjdmNS00MmZmLTk4MjgtOWUyNTQ2MjFiNmU5XkEyXkFqcGdeQXVyODMyNTM0MjM@._V1_.jpg,,2021,7.2,2097,JP
+tt12011442,Burn the Witch,https://m.media-amazon.com/images/M/MV5BODg1YTRlMGUtYTFlYS00ODRmLTk4ZTktNjIyNWUxMDg1MjBjXkEyXkFqcGdeQXVyODMyNTM0MjM@._V1_.jpg,,2020,6.7,1348,JP
+tt9507234,Digimon Adventure: Last Evolution Kizuna,https://m.media-amazon.com/images/M/MV5BMDdmNTEwMmYtN2MwYi00NmMzLTg2ZjUtMmI4MDkyNWUzYmE5XkEyXkFqcGdeQXVyNzEyMDQ1MDA@._V1_.jpg,,2020,7.5,1981,JP
+tt8092118,Fate/stay night [Heaven's Feel] III. spring song,https://m.media-amazon.com/images/M/MV5BYTg3MmY5MzMtNTdjYS00ZWU2LWI2ODUtOGRmZDRkMzk3MjE4XkEyXkFqcGdeQXVyMTIzNDg4NTk0._V1_.jpg,,2020,7.9,2708,JP
+tt15830702,Sword Art Online the Movie: Progressive - Scherzo of Deep Night,https://m.media-amazon.com/images/M/MV5BNzExZjlkODEtNTNiNC00OGE4LWI0YTEtNzVjODU5NzFjN2FjXkEyXkFqcGdeQXVyMTEwMjgyMzIz._V1_.jpg,,2022,6.7,1033,JP
+tt13288678,Mobile Suit Gundam: Hathaway,https://m.media-amazon.com/images/M/MV5BYThkZTFjN2YtMmFlMy00YjRjLThjOGUtOGE3YWY3NDJkMjUxXkEyXkFqcGdeQXVyMTM3NDc1OTM2._V1_.jpg,,2021,6.6,1967,JP
+tt12093860,Detective Conan: The Scarlet Bullet,https://m.media-amazon.com/images/M/MV5BZjlmZTAyYmQtYjA1Ny00N2IwLTlmZTktNjc0OTM4OTQ2ZDE3XkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_.jpg,,2021,6.2,1779,JP
+tt13884144,The Seven Deadly Sins: Cursed by Light,https://m.media-amazon.com/images/M/MV5BYjQ3ZGQxNjItNzIwMi00N2ZiLTliY2QtZDU3MTIwZTY0OWU4XkEyXkFqcGdeQXVyODMyNTM0MjM@._V1_.jpg,,2021,6.3,1475,JP
+tt11151982,Goblin Slayer: Goblin's Crown,https://m.media-amazon.com/images/M/MV5BYzIzNTNkZmMtYTE2Mi00NWEwLTk5MzktNWM2ZTNlNDI2MmM4XkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_.jpg,,2020,6.6,2098,JP
+tt19770970,Detective Conan: The Bride of Halloween,https://m.media-amazon.com/images/M/MV5BNTE5NzNhNzYtY2YxOC00ZjY2LTk5MzctNWY0NDdiN2IxNzc0XkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_.jpg,,2022,6.8,1779,JP
+tt10508838,Double World,https://m.media-amazon.com/images/M/MV5BZmUxMWVhMDEtNTI5ZS00NjNjLWIzY2ItYTFiYThhYWNmYWY3XkEyXkFqcGdeQXVyOTE4ODkzMzA@._V1_.jpg,,2020,6.2,4808,CN
+tt13269670,New Gods: Nezha Reborn,https://m.media-amazon.com/images/M/MV5BZmU0ZTQ1OWYtOTcyMi00OWVmLWJkNmEtY2I5OGEwYTJmM2Q1XkEyXkFqcGdeQXVyNDM1Nzc0MTI@._V1_.jpg,,2021,6.8,3920,CN
+tt13317320,Snipers,https://m.media-amazon.com/images/M/MV5BMjk0YTA5MzUtZDJjMy00M2IzLWJmNmEtZmMxOTkxZDYzZGEzXkEyXkFqcGdeQXVyNDM1Nzc0MTI@._V1_.jpg,,2022,6.3,1351,CN
+tt12151820,The Yinyang Master,https://m.media-amazon.com/images/M/MV5BZDFhN2FjYTYtOTNmMy00ZmFkLWIyNmMtYWI3YWEzZWMwODY1XkEyXkFqcGdeQXVyOTkwMDYwOTk@._V1_.jpg,,2021,6.4,3242,CN
+tt11177804,Jiang Ziya,https://m.media-amazon.com/images/M/MV5BZTEwNzRjNjgtMmM1Yy00ZDY3LWIyZDgtOWNlZWY1ZGYzNzg0XkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_.jpg,,2020,6.5,2273,CN
+tt11564214,End Game,https://m.media-amazon.com/images/M/MV5BMTY4NTg0YzgtOTdkZS00N2JiLTgxZjgtZDAyZTk3YTk5ZWNkXkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_.jpg,,2021,6.2,1048,CN

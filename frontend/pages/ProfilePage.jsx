@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MovieCard from "../components/home/MovieCard.jsx";
-import { HomeFooter, HomeNav } from "../components/home/index.js";
+import HomeFooter from "../components/home/HomeFooter.jsx";
+import HomeNav from "../components/home/HomeNav.jsx";
 import {
   profileStats,
   profileUser,

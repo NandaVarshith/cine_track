@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { HomeFooter, HomeNav } from "../components/home/index.js";
+import HomeFooter from "../components/home/HomeFooter.jsx";
+import HomeNav from "../components/home/HomeNav.jsx";
 import { getAssistantReply, quickPrompts } from "../components/chatbot/chatbotData.js";
 import "../src/index.css";
 

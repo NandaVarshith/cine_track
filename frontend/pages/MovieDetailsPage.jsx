@@ -1,6 +1,8 @@
 import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { HomeFooter, HomeNav, MovieStrip } from "../components/home/index.js";
+import HomeFooter from "../components/home/HomeFooter.jsx";
+import HomeNav from "../components/home/HomeNav.jsx";
+import MovieStrip from "../components/home/MovieStrip.jsx";
 import { getMovieById } from "../components/movie-details/movieDetailsData.js";
 import "../src/index.css";
 
