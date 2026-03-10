@@ -21,7 +21,7 @@ function MovieStrip({
       <div className="movie-strip">
         {movies.map((movie) => (
           <MovieCard
-            key={`${title}-${movie.title}`}
+            key={movie.id}
             movie={movie}
             onSecondaryAction={onViewDetails}
           />

@@ -11,16 +11,14 @@ function RecommendedSection({ movies }) {
       <div className="recommend-grid">
         {movies.map((movie) => (
           <article className="recommend-card" key={movie.title}>
-            <img src={movie.poster} alt={movie.title} loading="lazy" />
+            <img src={movie.poster_url} alt={movie.title} loading="lazy" />
             <div className="recommend-content">
               <div>
                 <h3>{movie.title}</h3>
                 <p>Rating {movie.rating}</p>
               </div>
               <div className="tag-wrap">
-                {movie.genre.map((tag) => (
-                  <span key={`${movie.title}-${tag}`}>{tag}</span>
-                ))}
+                
               </div>
             </div>
           </article>

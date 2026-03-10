@@ -29,7 +29,7 @@ function MovieCard({
 
   return (
     <article className="movie-card">
-      <img src={movie.poster} alt={movie.title} loading="lazy" />
+      <img src={movie.poster_url} alt={movie.title} loading="lazy" />
       {heartBurstId > 0 && (
         <div key={heartBurstId} className="movie-heart-burst" aria-hidden="true">
           <span>{"\u2665"}</span>

@@ -7,12 +7,11 @@ import HomeFooter from "../components/home/HomeFooter.jsx";
 import HomeNav from "../components/home/HomeNav.jsx";
 import MovieStrip from "../components/home/MovieStrip.jsx";
 import RecommendedSection from "../components/home/RecommendedSection.jsx";
+import axios from 'axios';
+import { useEffect , useState } from "react";
 import {
-  categoryRows,
   continueWatching,
   featuredMovie,
-  recommendedMovies,
-  trendingMovies,
 } from "../components/home/homeData.js";
 
 function Home() {
@@ -22,6 +21,47 @@ function Home() {
     navigate(`/movie/${movie.id || "eclipse-protocol"}`);
   }
 
+  const [trendingMovies , setTrendingMovies] = useState([]);
+  const [recommendedMovies , setRecommendedMovies] = useState([]);
+  const [categoryRows , setCategoryRows] = useState({});
+
+
+async function fetchTrendingMovies() {
+      try {
+        const response = await axios.get('http://localhost:8080/api/movies/trending');
+        setTrendingMovies(response.data);
+      } catch (error) {
+        console.error('Error fetching trending movies:', error);
+      }
+    }
+
+  async function fetchRecommendedMovies() {
+      try {
+        const response = await axios.get('http://localhost:8080/api/movies/recommended');
+        setRecommendedMovies(response.data);
+      } catch (error) {
+        console.error('Error fetching recommended movies:', error);
+      }
+    }
+
+  async function fetchCategoryRows() {
+      try {
+        const response = await axios.get('http://localhost:8080/api/movies/categories');
+        setCategoryRows(response.data);
+      } catch (error) {
+        console.error('Error fetching category rows:', error);
+      }
+    }
+
+
+
+  useEffect(()=>{
+  
+    fetchTrendingMovies();  
+    fetchRecommendedMovies();
+    fetchCategoryRows();
+  },[]);
+
   return (
     <main className="cinetrack-page">
       <HomeNav />
@@ -30,12 +70,13 @@ function Home() {
       <MovieStrip title="Trending Movies" movies={trendingMovies} onViewDetails={handleViewDetails} />
       <RecommendedSection movies={recommendedMovies} />
       <ContinueWatchingSection movies={continueWatching} />
-
-      {categoryRows.map((rowTitle) => (
+      
+      
+      {Object.entries(categoryRows).map(([rowTitle, rowMovies]) => (
         <MovieStrip
           key={rowTitle}
           title={rowTitle}
-          movies={trendingMovies}
+          movies={rowMovies}
           onViewDetails={handleViewDetails}
         />
       ))}
