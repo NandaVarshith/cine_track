@@ -21,6 +21,7 @@ function HomeNav() {
         <Link to="/wishlist">Wishlist</Link>
         <Link to="/chatbot">Chatbot</Link>
         <Link to="/profile">Profile</Link>
+        <Link to="/auth/login">Login</Link>
       </nav>
 
       <Link className="avatar-btn" to="/profile" aria-label="Open profile">

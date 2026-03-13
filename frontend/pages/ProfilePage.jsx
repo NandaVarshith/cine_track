@@ -1,33 +1,79 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import MovieCard from "../components/home/MovieCard.jsx";
 import HomeFooter from "../components/home/HomeFooter.jsx";
 import HomeNav from "../components/home/HomeNav.jsx";
 import {
   profileStats,
-  profileUser,
   recentlyWatched,
   userReviews,
   wishlistPreview,
 } from "../components/profile/profileData.js";
 import "../src/index.css";
 
+const emptyProfile = {
+  id: "",
+  name: "",
+  email: "",
+  avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80",
+  bio: "",
+};
+
 function ProfilePage() {
   const navigate = useNavigate();
   const [isSettingsMenuOpen, setIsSettingsMenuOpen] = useState(false);
   const [activeSettingsPanel, setActiveSettingsPanel] = useState("");
+  const [profile, setProfile] = useState(emptyProfile);
+  const [editValues, setEditValues] = useState({ name: "", email: "", bio: "" });
+  const [passwordValues, setPasswordValues] = useState({
+    currentPassword: "",
+    newPassword: "",
+    confirmPassword: "",
+  });
+  const [status, setStatus] = useState({ loading: false, error: "" });
 
   useEffect(() => {
     function handleEscape(event) {
       if (event.key === "Escape") {
         setIsSettingsMenuOpen(false);
         setActiveSettingsPanel("");
+        setStatus({ loading: false, error: "" });
       }
     }
 
     window.addEventListener("keydown", handleEscape);
     return () => window.removeEventListener("keydown", handleEscape);
   }, []);
+
+  useEffect(() => {
+    async function fetchProfile() {
+      try {
+        const response = await axios.get("http://localhost:8080/api/users/me", {
+          withCredentials: true,
+        });
+        const data = response.data;
+        setProfile({
+          id: data.id,
+          name: data.name || "",
+          email: data.email || "",
+          avatar: data.avatar || emptyProfile.avatar,
+          bio: data.bio || "",
+        });
+        setEditValues({
+          name: data.name || "",
+          email: data.email || "",
+          bio: data.bio || "",
+        });
+      } catch (error) {
+        if (error?.response?.status === 401) {
+          navigate("/auth/login");
+        }
+      }
+    }
+
+    fetchProfile();
+  }, [navigate]);
 
   function handleViewDetails(movie) {
     navigate(`/movie/${movie.id || "eclipse-protocol"}`);
@@ -36,10 +82,103 @@ function ProfilePage() {
   function openSettingsPanel(panelName) {
     setIsSettingsMenuOpen(false);
     setActiveSettingsPanel(panelName);
+    setStatus({ loading: false, error: "" });
   }
 
   function closeSettingsPanel() {
     setActiveSettingsPanel("");
+    setStatus({ loading: false, error: "" });
+  }
+
+  function handleEditChange(event) {
+    const { name, value } = event.target;
+    setEditValues((prev) => ({ ...prev, [name]: value }));
+  }
+
+  function handlePasswordChange(event) {
+    const { name, value } = event.target;
+    setPasswordValues((prev) => ({ ...prev, [name]: value }));
+  }
+
+  async function handleSaveProfile() {
+    setStatus({ loading: true, error: "" });
+    try {
+      const response = await axios.patch(
+        "http://localhost:8080/api/users/me",
+        {
+          name: editValues.name,
+          avatar: profile.avatar,
+          bio: editValues.bio,
+        },
+        { withCredentials: true }
+      );
+
+      const data = response.data;
+      setProfile((prev) => ({
+        ...prev,
+        name: data.name || prev.name,
+        bio: data.bio || prev.bio,
+        avatar: data.avatar || prev.avatar,
+      }));
+      setEditValues((prev) => ({ ...prev, name: data.name || prev.name, bio: data.bio || prev.bio }));
+      closeSettingsPanel();
+    } catch (error) {
+      setStatus({
+        loading: false,
+        error:
+          error?.response?.data?.message ||
+          "Unable to update profile. Please try again.",
+      });
+    } finally {
+      setStatus((prev) => ({ ...prev, loading: false }));
+    }
+  }
+
+  async function handleChangePassword() {
+    if (passwordValues.newPassword !== passwordValues.confirmPassword) {
+      setStatus({ loading: false, error: "New passwords do not match." });
+      return;
+    }
+
+    setStatus({ loading: true, error: "" });
+    try {
+      await axios.post(
+        "http://localhost:8080/api/users/me/password",
+        {
+          currentPassword: passwordValues.currentPassword,
+          newPassword: passwordValues.newPassword,
+        },
+        { withCredentials: true }
+      );
+      setPasswordValues({ currentPassword: "", newPassword: "", confirmPassword: "" });
+      closeSettingsPanel();
+    } catch (error) {
+      setStatus({
+        loading: false,
+        error:
+          error?.response?.data?.message ||
+          "Unable to update password. Please try again.",
+      });
+    } finally {
+      setStatus((prev) => ({ ...prev, loading: false }));
+    }
+  }
+
+  async function handleLogout() {
+    setStatus({ loading: true, error: "" });
+    try {
+      await axios.post("http://localhost:8080/api/auth/logout", {}, { withCredentials: true });
+      navigate("/auth/login");
+    } catch (error) {
+      setStatus({
+        loading: false,
+        error:
+          error?.response?.data?.message ||
+          "Unable to logout. Please try again.",
+      });
+    } finally {
+      setStatus((prev) => ({ ...prev, loading: false }));
+    }
   }
 
   const isModalOpen = Boolean(activeSettingsPanel);
@@ -49,10 +188,10 @@ function ProfilePage() {
       <HomeNav />
 
       <section className="section-block profile-header-card">
-        <img src={profileUser.avatar} alt={`${profileUser.name} avatar`} />
+        <img src={profile.avatar} alt={`${profile.name} avatar`} />
         <div className="profile-header-content">
           <div className="profile-header-top">
-            <h1>{profileUser.name}</h1>
+            <h1>{profile.name || "Your Profile"}</h1>
             <div className="profile-settings-wrap">
               <button
                 type="button"
@@ -77,8 +216,8 @@ function ProfilePage() {
               )}
             </div>
           </div>
-          <p className="profile-email">{profileUser.email}</p>
-          <p className="profile-bio">{profileUser.bio}</p>
+          <p className="profile-email">{profile.email}</p>
+          <p className="profile-bio">{profile.bio || "Add a short bio about yourself."}</p>
         </div>
       </section>
 
@@ -163,18 +302,29 @@ function ProfilePage() {
                 <div className="profile-modal-content">
                   <label>
                     Name
-                    <input type="text" defaultValue={profileUser.name} />
+                    <input
+                      type="text"
+                      name="name"
+                      value={editValues.name}
+                      onChange={handleEditChange}
+                    />
                   </label>
                   <label>
                     Email
-                    <input type="email" defaultValue={profileUser.email} />
+                    <input type="email" value={editValues.email} disabled />
                   </label>
                   <label>
                     Bio
-                    <textarea defaultValue={profileUser.bio} rows="3" />
+                    <textarea
+                      name="bio"
+                      value={editValues.bio}
+                      onChange={handleEditChange}
+                      rows="3"
+                    />
                   </label>
-                  <button type="button" className="primary-btn">
-                    Save Changes
+                  {status.error && <p className="profile-modal-error">{status.error}</p>}
+                  <button type="button" className="primary-btn" onClick={handleSaveProfile}>
+                    {status.loading ? "Saving..." : "Save Changes"}
                   </button>
                 </div>
               </>
@@ -186,18 +336,37 @@ function ProfilePage() {
                 <div className="profile-modal-content">
                   <label>
                     Current Password
-                    <input type="password" placeholder="Enter current password" />
+                    <input
+                      type="password"
+                      name="currentPassword"
+                      placeholder="Enter current password"
+                      value={passwordValues.currentPassword}
+                      onChange={handlePasswordChange}
+                    />
                   </label>
                   <label>
                     New Password
-                    <input type="password" placeholder="Enter new password" />
+                    <input
+                      type="password"
+                      name="newPassword"
+                      placeholder="Enter new password"
+                      value={passwordValues.newPassword}
+                      onChange={handlePasswordChange}
+                    />
                   </label>
                   <label>
                     Confirm Password
-                    <input type="password" placeholder="Confirm new password" />
+                    <input
+                      type="password"
+                      name="confirmPassword"
+                      placeholder="Confirm new password"
+                      value={passwordValues.confirmPassword}
+                      onChange={handlePasswordChange}
+                    />
                   </label>
-                  <button type="button" className="primary-btn">
-                    Update Password
+                  {status.error && <p className="profile-modal-error">{status.error}</p>}
+                  <button type="button" className="primary-btn" onClick={handleChangePassword}>
+                    {status.loading ? "Updating..." : "Update Password"}
                   </button>
                 </div>
               </>
@@ -208,12 +377,13 @@ function ProfilePage() {
                 <h2>Logout</h2>
                 <div className="profile-modal-content">
                   <p>Are you sure you want to logout from CineTrack?</p>
+                  {status.error && <p className="profile-modal-error">{status.error}</p>}
                   <div className="profile-modal-actions">
                     <button type="button" className="secondary-btn" onClick={closeSettingsPanel}>
                       Cancel
                     </button>
-                    <button type="button" className="primary-btn">
-                      Confirm Logout
+                    <button type="button" className="primary-btn" onClick={handleLogout}>
+                      {status.loading ? "Logging out..." : "Confirm Logout"}
                     </button>
                   </div>
                 </div>
