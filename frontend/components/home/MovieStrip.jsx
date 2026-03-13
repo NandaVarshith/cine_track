@@ -5,6 +5,7 @@ function MovieStrip({
   movies,
   actionText = "View all",
   onViewDetails = () => {},
+  onAddToWishlist = () => {},
   showSectionAction = true,
 }) {
   return (
@@ -23,6 +24,7 @@ function MovieStrip({
           <MovieCard
             key={movie.id}
             movie={movie}
+            onPrimaryAction={onAddToWishlist}
             onSecondaryAction={onViewDetails}
           />
         ))}

@@ -1,15 +1,9 @@
 ﻿import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { api } from "../src/api/client.js";
 import MovieCard from "../components/home/MovieCard.jsx";
 import HomeFooter from "../components/home/HomeFooter.jsx";
 import HomeNav from "../components/home/HomeNav.jsx";
-import {
-  profileStats,
-  recentlyWatched,
-  userReviews,
-  wishlistPreview,
-} from "../components/profile/profileData.js";
 import "../src/index.css";
 
 const emptyProfile = {
@@ -32,6 +26,15 @@ function ProfilePage() {
     confirmPassword: "",
   });
   const [status, setStatus] = useState({ loading: false, error: "" });
+  const [watchlistItems, setWatchlistItems] = useState([]);
+  const [profileStats, setProfileStats] = useState([
+    { label: "Movies Watched", value: 0 },
+    { label: "Wishlist", value: 0 },
+    { label: "Dropped", value: 0 },
+  ]);
+  const [recentlyWatched, setRecentlyWatched] = useState([]);
+  const [wishlistPreview, setWishlistPreview] = useState([]);
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     function handleEscape(event) {
@@ -49,7 +52,7 @@ function ProfilePage() {
   useEffect(() => {
     async function fetchProfile() {
       try {
-        const response = await axios.get("http://localhost:8080/api/users/me", {
+        const response = await api.get("/api/users/me", {
           withCredentials: true,
         });
         const data = response.data;
@@ -73,6 +76,60 @@ function ProfilePage() {
     }
 
     fetchProfile();
+  }, [navigate]);
+
+  useEffect(() => {
+    async function fetchWatchlist() {
+      try {
+        const response = await api.get("/api/watchlist", {
+          withCredentials: true,
+        });
+        const items = response.data || [];
+        setWatchlistItems(items);
+
+        const sorted = [...items].sort((a, b) => {
+          const aTime = a.updatedAt ? new Date(a.updatedAt).getTime() : 0;
+          const bTime = b.updatedAt ? new Date(b.updatedAt).getTime() : 0;
+          return bTime - aTime;
+        });
+
+        const watchedItems = sorted.filter((item) => item.status === "WATCHED");
+        const plannedItems = sorted.filter((item) => item.status === "PLANNED");
+        const droppedItems = sorted.filter((item) => item.status === "DROPPED");
+
+        setProfileStats([
+          { label: "Movies Watched", value: watchedItems.length },
+          { label: "Wishlist", value: plannedItems.length },
+          { label: "Dropped", value: droppedItems.length },
+        ]);
+
+        setRecentlyWatched(watchedItems.slice(0, 4).map((item) => item.movie));
+        setWishlistPreview(plannedItems.slice(0, 3).map((item) => item.movie));
+      } catch (error) {
+        if (error?.response?.status === 401) {
+          navigate("/auth/login");
+        }
+      }
+    }
+
+    fetchWatchlist();
+  }, [navigate]);
+
+  useEffect(() => {
+    async function fetchReviews() {
+      try {
+        const response = await api.get("/api/reviews/me", {
+          withCredentials: true,
+        });
+        setReviews(response.data || []);
+      } catch (error) {
+        if (error?.response?.status === 401) {
+          navigate("/auth/login");
+        }
+      }
+    }
+
+    fetchReviews();
   }, [navigate]);
 
   function handleViewDetails(movie) {
@@ -103,8 +160,8 @@ function ProfilePage() {
   async function handleSaveProfile() {
     setStatus({ loading: true, error: "" });
     try {
-      const response = await axios.patch(
-        "http://localhost:8080/api/users/me",
+      const response = await api.patch(
+        "/api/users/me",
         {
           name: editValues.name,
           avatar: profile.avatar,
@@ -142,8 +199,8 @@ function ProfilePage() {
 
     setStatus({ loading: true, error: "" });
     try {
-      await axios.post(
-        "http://localhost:8080/api/users/me/password",
+      await api.post(
+        "/api/users/me/password",
         {
           currentPassword: passwordValues.currentPassword,
           newPassword: passwordValues.newPassword,
@@ -167,7 +224,7 @@ function ProfilePage() {
   async function handleLogout() {
     setStatus({ loading: true, error: "" });
     try {
-      await axios.post("http://localhost:8080/api/auth/logout", {}, { withCredentials: true });
+      await api.post("/api/auth/logout", {}, { withCredentials: true });
       navigate("/auth/login");
     } catch (error) {
       setStatus({
@@ -234,17 +291,22 @@ function ProfilePage() {
         <div className="section-head">
           <h2>Recently Watched</h2>
         </div>
-        <div className="profile-movie-grid">
-          {recentlyWatched.map((movie) => (
-            <MovieCard
-              key={`recent-${movie.id}`}
-              movie={movie}
-              primaryActionText="View Details"
-              onPrimaryAction={handleViewDetails}
-              secondaryActionText="Add to Wishlist"
-            />
-          ))}
-        </div>
+        {recentlyWatched.length === 0 ? (
+          <p className="profile-empty">No watched movies yet.</p>
+        ) : (
+          <div className="profile-movie-grid">
+            {recentlyWatched.map((movie) => (
+              <MovieCard
+                key={`recent-${movie.id}`}
+                movie={movie}
+                primaryActionText="View Details"
+                onPrimaryAction={handleViewDetails}
+                secondaryActionText="View Details"
+                onSecondaryAction={handleViewDetails}
+              />
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="section-block profile-section-card">
@@ -254,32 +316,41 @@ function ProfilePage() {
             View Full Wishlist
           </button>
         </div>
-        <div className="profile-movie-grid profile-movie-grid-compact">
-          {wishlistPreview.map((movie) => (
-            <MovieCard
-              key={`wishlist-${movie.id}`}
-              movie={movie}
-              primaryActionText="View Details"
-              onPrimaryAction={handleViewDetails}
-              secondaryActionText="Add to Wishlist"
-            />
-          ))}
-        </div>
+        {wishlistPreview.length === 0 ? (
+          <p className="profile-empty">Your wishlist is empty.</p>
+        ) : (
+          <div className="profile-movie-grid profile-movie-grid-compact">
+            {wishlistPreview.map((movie) => (
+              <MovieCard
+                key={`wishlist-${movie.id}`}
+                movie={movie}
+                primaryActionText="View Details"
+                onPrimaryAction={handleViewDetails}
+                secondaryActionText="View Details"
+                onSecondaryAction={handleViewDetails}
+              />
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="section-block profile-section-card">
         <div className="section-head">
           <h2>User Reviews</h2>
         </div>
-        <div className="profile-reviews-grid">
-          {userReviews.map((review) => (
-            <article className="profile-review-card" key={`${review.movieTitle}-${review.rating}`}>
-              <h3>{review.movieTitle}</h3>
-              <p className="profile-review-rating">Rating {review.rating}</p>
-              <p>{review.comment}</p>
-            </article>
-          ))}
-        </div>
+        {reviews.length === 0 ? (
+          <p className="profile-empty">No reviews yet.</p>
+        ) : (
+          <div className="profile-reviews-grid">
+            {reviews.map((review) => (
+              <article className="profile-review-card" key={review.id || review.movieId}>
+                <h3>{review.movieTitle || "Untitled Movie"}</h3>
+                <p className="profile-review-rating">Rating {review.rating} / 10</p>
+                <p>{review.comment}</p>
+              </article>
+            ))}
+          </div>
+        )}
       </section>
 
       <HomeFooter />

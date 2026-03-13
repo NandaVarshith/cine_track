@@ -1,68 +1,90 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { api } from "../src/api/client.js";
 import HomeFooter from "../components/home/HomeFooter.jsx";
 import HomeNav from "../components/home/HomeNav.jsx";
 import MovieCard from "../components/home/MovieCard.jsx";
 import "../src/index.css";
 
-const initialWishlistMovies = [
-  {
-    id: "eclipse-protocol",
-    title: "Eclipse Protocol",
-    rating: "8.9",
-    poster:
-      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80",
-    watched: true,
-  },
-  {
-    id: "last-signal",
-    title: "Last Signal",
-    rating: "8.4",
-    poster:
-      "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80",
-    watched: false,
-  },
-  {
-    id: "neon-frontier",
-    title: "Neon Frontier",
-    rating: "8.7",
-    poster:
-      "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=500&q=80",
-    watched: false,
-  },
-  {
-    id: "silent-orbit",
-    title: "Silent Orbit",
-    rating: "8.1",
-    poster:
-      "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=80",
-    watched: true,
-  },
-];
-
 function WishlistPage() {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("all");
-  const [wishlistMovies, setWishlistMovies] = useState(initialWishlistMovies);
+  const [watchlistItems, setWatchlistItems] = useState([]);
+  const [statusMessage, setStatusMessage] = useState("");
 
   const filteredMovies = useMemo(() => {
     if (activeFilter === "watched") {
-      return wishlistMovies.filter((movie) => movie.watched);
+      return watchlistItems.filter((item) => item.status === "WATCHED");
+    }
+    if (activeFilter === "planned") {
+      return watchlistItems.filter((item) => item.status === "PLANNED");
+    }
+    if (activeFilter === "dropped") {
+      return watchlistItems.filter((item) => item.status === "DROPPED");
+    }
+    return watchlistItems;
+  }, [activeFilter, watchlistItems]);
+
+  useEffect(() => {
+    async function fetchWatchlist() {
+      try {
+        const response = await api.get("/api/watchlist", {
+          withCredentials: true,
+        });
+        setWatchlistItems(response.data || []);
+        setStatusMessage("");
+      } catch (error) {
+        if (error?.response?.status === 401) {
+          navigate("/auth/login");
+        } else {
+          setStatusMessage("Unable to load your wishlist. Please try again.");
+        }
+      }
     }
 
-    if (activeFilter === "not-watched") {
-      return wishlistMovies.filter((movie) => !movie.watched);
+    fetchWatchlist();
+  }, [navigate]);
+
+  async function handleRemoveFromWishlist(item) {
+    try {
+      await api.delete(`/api/watchlist/${item.movieId}`, {
+        withCredentials: true,
+      });
+      setWatchlistItems((prev) => prev.filter((entry) => entry.movieId !== item.movieId));
+      setStatusMessage("");
+    } catch (error) {
+      if (error?.response?.status === 401) {
+        navigate("/auth/login");
+      } else {
+        setStatusMessage("Unable to remove this movie. Please try again.");
+      }
     }
-
-    return wishlistMovies;
-  }, [activeFilter, wishlistMovies]);
-
-  function handleRemoveFromWishlist(movie) {
-    setWishlistMovies((prev) => prev.filter((item) => item.id !== movie.id));
   }
 
-  function handleViewDetails(movie) {
-    navigate(`/movie/${movie.id || "eclipse-protocol"}`);
+  function handleViewDetails(item) {
+    navigate(`/movie/${item.movie?.id || item.movieId || "eclipse-protocol"}`);
+  }
+
+  async function handleUpdateStatus(item, status) {
+    try {
+      const response = await api.patch(
+        `/api/watchlist/${item.movieId}`,
+        { status },
+        { withCredentials: true }
+      );
+      setWatchlistItems((prev) =>
+        prev.map((entry) =>
+          entry.movieId === item.movieId ? { ...entry, status: response.data.status } : entry
+        )
+      );
+      setStatusMessage("");
+    } catch (error) {
+      if (error?.response?.status === 401) {
+        navigate("/auth/login");
+      } else {
+        setStatusMessage("Unable to update status. Please try again.");
+      }
+    }
   }
 
   return (
@@ -92,12 +114,21 @@ function WishlistPage() {
           </button>
           <button
             type="button"
-            className={`ghost-btn ${activeFilter === "not-watched" ? "is-active" : ""}`}
-            onClick={() => setActiveFilter("not-watched")}
+            className={`ghost-btn ${activeFilter === "planned" ? "is-active" : ""}`}
+            onClick={() => setActiveFilter("planned")}
           >
-            Not Watched
+            Planned
+          </button>
+          <button
+            type="button"
+            className={`ghost-btn ${activeFilter === "dropped" ? "is-active" : ""}`}
+            onClick={() => setActiveFilter("dropped")}
+          >
+            Dropped
           </button>
         </div>
+
+        {statusMessage && <p className="wishlist-status-message">{statusMessage}</p>}
 
         {filteredMovies.length === 0 ? (
           <div className="wishlist-empty">
@@ -108,15 +139,50 @@ function WishlistPage() {
           </div>
         ) : (
           <div className="wishlist-grid">
-            {filteredMovies.map((movie) => (
-              <MovieCard
-                key={movie.id}
-                movie={movie}
-                primaryActionText="Remove from Wishlist"
-                onPrimaryAction={handleRemoveFromWishlist}
-                secondaryActionText="View Details"
-                onSecondaryAction={handleViewDetails}
-              />
+            {filteredMovies.map((item) => (
+              <div key={item.movieId} className="wishlist-card">
+                <MovieCard
+                  movie={item.movie}
+                  primaryActionText="Remove from Wishlist"
+                  onPrimaryAction={() => handleRemoveFromWishlist(item)}
+                  secondaryActionText="View Details"
+                  onSecondaryAction={() => handleViewDetails(item)}
+                />
+                <div className="wishlist-card-actions">
+                  <span className="wishlist-status-pill">
+                    Status: {item.status || "PLANNED"}
+                  </span>
+                  <div className="wishlist-action-row">
+                    {item.status !== "WATCHED" && (
+                      <button
+                        type="button"
+                        className="ghost-btn"
+                        onClick={() => handleUpdateStatus(item, "WATCHED")}
+                      >
+                        Mark Watched
+                      </button>
+                    )}
+                    {item.status !== "PLANNED" && (
+                      <button
+                        type="button"
+                        className="ghost-btn"
+                        onClick={() => handleUpdateStatus(item, "PLANNED")}
+                      >
+                        Move to Planned
+                      </button>
+                    )}
+                    {item.status !== "DROPPED" && (
+                      <button
+                        type="button"
+                        className="ghost-btn"
+                        onClick={() => handleUpdateStatus(item, "DROPPED")}
+                      >
+                        Mark Dropped
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         )}

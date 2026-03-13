@@ -1,7 +1,7 @@
 ﻿import "../src/index.css";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import { api } from "../src/api/client.js";
 
 const MODES = ["login", "signup"];
 
@@ -43,8 +43,8 @@ function AuthPage() {
 
     try {
       if (activeMode === "signup") {
-        await axios.post(
-          "http://localhost:8080/api/auth/register",
+        await api.post(
+          "/api/auth/register",
           {
             name: formValues.name,
             email: formValues.email,
@@ -54,8 +54,8 @@ function AuthPage() {
         );
       }
 
-      await axios.post(
-        "http://localhost:8080/api/auth/login",
+      await api.post(
+        "/api/auth/login",
         {
           email: formValues.email,
           password: formValues.password,

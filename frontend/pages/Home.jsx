@@ -7,7 +7,7 @@ import HomeFooter from "../components/home/HomeFooter.jsx";
 import HomeNav from "../components/home/HomeNav.jsx";
 import MovieStrip from "../components/home/MovieStrip.jsx";
 import RecommendedSection from "../components/home/RecommendedSection.jsx";
-import axios from 'axios';
+import { api } from "../src/api/client.js";
 import { useEffect , useState } from "react";
 import {
   continueWatching,
@@ -28,7 +28,7 @@ function Home() {
 
 async function fetchTrendingMovies() {
       try {
-        const response = await axios.get('http://localhost:8080/api/movies/trending');
+        const response = await api.get("/api/movies/trending");
         setTrendingMovies(response.data);
       } catch (error) {
         console.error('Error fetching trending movies:', error);
@@ -37,7 +37,7 @@ async function fetchTrendingMovies() {
 
   async function fetchRecommendedMovies() {
       try {
-        const response = await axios.get('http://localhost:8080/api/movies/recommended');
+        const response = await api.get("/api/movies/recommended");
         setRecommendedMovies(response.data);
       } catch (error) {
         console.error('Error fetching recommended movies:', error);
@@ -46,13 +46,32 @@ async function fetchTrendingMovies() {
 
   async function fetchCategoryRows() {
       try {
-        const response = await axios.get('http://localhost:8080/api/movies/categories');
+        const response = await api.get("/api/movies/categories");
         setCategoryRows(response.data);
       } catch (error) {
         console.error('Error fetching category rows:', error);
       }
     }
 
+  async function handleAddToWishlist(movie) {
+    if (!movie?.id) {
+      console.error("Missing movie id for wishlist.");
+      return;
+    }
+    try {
+      await api.post(
+        "/api/watchlist",
+        { movieId: movie.id, status: "PLANNED" },
+        { withCredentials: true }
+      );
+    } catch (error) {
+      if (error?.response?.status === 401) {
+        navigate("/auth/login");
+        return;
+      }
+      console.error("Error adding to wishlist:", error);
+    }
+  }
 
 
   useEffect(()=>{
@@ -67,7 +86,12 @@ async function fetchTrendingMovies() {
       <HomeNav />
       <HeroBanner movie={featuredMovie} />
 
-      <MovieStrip title="Trending Movies" movies={trendingMovies} onViewDetails={handleViewDetails} />
+      <MovieStrip
+        title="Trending Movies"
+        movies={trendingMovies}
+        onViewDetails={handleViewDetails}
+        onAddToWishlist={handleAddToWishlist}
+      />
       <RecommendedSection movies={recommendedMovies} />
       <ContinueWatchingSection movies={continueWatching} />
       
@@ -78,6 +102,7 @@ async function fetchTrendingMovies() {
           title={rowTitle}
           movies={rowMovies}
           onViewDetails={handleViewDetails}
+          onAddToWishlist={handleAddToWishlist}
         />
       ))}
 

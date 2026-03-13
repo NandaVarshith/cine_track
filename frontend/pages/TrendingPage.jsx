@@ -1,32 +1,51 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { api } from "../src/api/client.js";
 import MovieCard from "../components/home/MovieCard.jsx";
 import HomeFooter from "../components/home/HomeFooter.jsx";
 import HomeNav from "../components/home/HomeNav.jsx";
-import {
-  getTrendingMoviesByFilter,
-  trendingFilterOptions,
-} from "../components/trending/trendingData.js";
 import "../src/index.css";
 
 const MOVIES_PER_PAGE = 8;
 
+const trendingFilterOptions = [
+  { id: "all", label: "All Movies" },
+  { id: "trending", label: "Trending" },
+  { id: "popular", label: "Popular" },
+  { id: "top-rated", label: "Top Rated" },
+];
+
 function TrendingPage() {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("all");
+  const [movies, setMovies] = useState([]);
   const [visibleCount, setVisibleCount] = useState(MOVIES_PER_PAGE);
   const [wishlistIds, setWishlistIds] = useState([]);
 
-  const filteredMovies = useMemo(
-    () => getTrendingMoviesByFilter(activeFilter),
-    [activeFilter],
-  );
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        let endpoint = "/api/movies"; // Default for 'all'
+        if (activeFilter !== "all") {
+          endpoint = `/api/movies/${activeFilter}`;
+        }
+        const response = await api.get(endpoint);
+        setMovies(response.data);
+      } catch (error) {
+        console.error(`Error fetching ${activeFilter} movies:`, error);
+        setMovies([]);
+      }
+    };
+
+    fetchMovies();
+  }, [activeFilter]);
+
   const visibleMovies = useMemo(
-    () => filteredMovies.slice(0, visibleCount),
-    [filteredMovies, visibleCount],
+    () => movies.slice(0, visibleCount),
+    [movies, visibleCount],
   );
 
-  const canLoadMore = visibleCount < filteredMovies.length;
+  const canLoadMore = visibleCount < movies.length;
 
   function handleFilterChange(filterId) {
     setActiveFilter(filterId);
@@ -37,8 +56,25 @@ function TrendingPage() {
     navigate(`/movie/${movie.id || "eclipse-protocol"}`);
   }
 
-  function handleAddToWishlist(movie) {
-    setWishlistIds((prev) => (prev.includes(movie.id) ? prev : [...prev, movie.id]));
+  async function handleAddToWishlist(movie) {
+    if (!movie?.id) {
+      console.error("Missing movie id for wishlist.");
+      return;
+    }
+    try {
+      await api.post(
+        "/api/watchlist",
+        { movieId: movie.id, status: "PLANNED" },
+        { withCredentials: true }
+      );
+      setWishlistIds((prev) => (prev.includes(movie.id) ? prev : [...prev, movie.id]));
+    } catch (error) {
+      if (error?.response?.status === 401) {
+        navigate("/auth/login");
+        return;
+      }
+      console.error("Error adding to wishlist:", error);
+    }
   }
 
   function handleLoadMore() {
