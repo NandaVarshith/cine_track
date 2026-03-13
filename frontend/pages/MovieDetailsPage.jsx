@@ -18,6 +18,7 @@ function MovieDetailsPage() {
   const [progressPercent, setProgressPercent] = useState(0);
   const [progressStatus, setProgressStatus] = useState({ saving: false, error: "" });
   const [similarMovies, setSimilarMovies] = useState([]);
+  const [isSimilarLoading, setIsSimilarLoading] = useState(false);
 
   useEffect(() => {
     async function fetchMovieDetails() {
@@ -50,11 +51,14 @@ function MovieDetailsPage() {
   useEffect(() => {
     async function fetchSimilarMovies() {
       try {
+        setIsSimilarLoading(true);
         const response = await api.get(`/api/movies/${id}/similar`);
         setSimilarMovies(response.data || []);
       } catch (error) {
         console.error("Error fetching similar movies:", error);
         setSimilarMovies([]);
+      } finally {
+        setIsSimilarLoading(false);
       }
     }
 
@@ -376,6 +380,8 @@ function MovieDetailsPage() {
       <MovieStrip
         title="Similar Movies"
         movies={similarMovies}
+        isLoading={isSimilarLoading}
+        emptyMessage="No similar movies found."
         showSectionAction={false}
         onViewDetails={handleViewDetails}
       />

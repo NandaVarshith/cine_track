@@ -22,31 +22,46 @@ function Home() {
   const [recommendedMovies, setRecommendedMovies] = useState([]);
   const [categoryRows, setCategoryRows] = useState({});
   const [continueItems, setContinueItems] = useState([]);
+  const [isTrendingLoading, setIsTrendingLoading] = useState(true);
+  const [isRecommendedLoading, setIsRecommendedLoading] = useState(true);
+  const [isCategoryLoading, setIsCategoryLoading] = useState(true);
 
   async function fetchTrendingMovies() {
     try {
+      setIsTrendingLoading(true);
       const response = await api.get("/api/movies/trending");
       setTrendingMovies(response.data);
     } catch (error) {
       console.error("Error fetching trending movies:", error);
+      setTrendingMovies([]);
+    } finally {
+      setIsTrendingLoading(false);
     }
   }
 
   async function fetchRecommendedMovies() {
     try {
+      setIsRecommendedLoading(true);
       const response = await api.get("/api/movies/recommended");
       setRecommendedMovies(response.data);
     } catch (error) {
       console.error("Error fetching recommended movies:", error);
+      setRecommendedMovies([]);
+    } finally {
+      setIsRecommendedLoading(false);
     }
   }
 
   async function fetchCategoryRows() {
     try {
+      setIsCategoryLoading(true);
       const response = await api.get("/api/movies/categories");
       setCategoryRows(response.data);
     } catch (error) {
       console.error("Error fetching category rows:", error);
+      setCategoryRows({});
+    } finally {
+      setIsCategoryLoading(false);
     }
   }
 
@@ -102,23 +117,36 @@ function Home() {
         onViewDetails={handleViewDetails}
         onAddToWishlist={handleAddToWishlist}
         onSectionAction={() => navigate("/trending")}
+        isLoading={isTrendingLoading}
+        emptyMessage="No trending movies yet."
       />
-      <RecommendedSection movies={recommendedMovies} onRefresh={fetchRecommendedMovies} />
+      <RecommendedSection
+        movies={recommendedMovies}
+        onRefresh={fetchRecommendedMovies}
+        isLoading={isRecommendedLoading}
+      />
       <ContinueWatchingSection
         items={continueItems}
         onResume={(item) => handleViewDetails(item.movie)}
       />
       
       
-      {Object.entries(categoryRows).map(([rowTitle, rowMovies]) => (
-        <MovieStrip
-          key={rowTitle}
-          title={rowTitle}
-          movies={rowMovies}
-          onViewDetails={handleViewDetails}
-          onAddToWishlist={handleAddToWishlist}
-        />
-      ))}
+      {isCategoryLoading ? (
+        <section className="section-block">
+          <p className="section-empty">Loading movie categories...</p>
+        </section>
+      ) : (
+        Object.entries(categoryRows).map(([rowTitle, rowMovies]) => (
+          <MovieStrip
+            key={rowTitle}
+            title={rowTitle}
+            movies={rowMovies}
+            onViewDetails={handleViewDetails}
+            onAddToWishlist={handleAddToWishlist}
+            emptyMessage={`No ${rowTitle.toLowerCase()} right now.`}
+          />
+        ))
+      )}
 
       <ChatbotSection />
       <HomeFooter />

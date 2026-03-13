@@ -8,6 +8,8 @@ function MovieStrip({
   onAddToWishlist = () => {},
   onSectionAction,
   showSectionAction = true,
+  isLoading = false,
+  emptyMessage = "No movies to show here yet.",
 }) {
   const hasMovies = Array.isArray(movies) && movies.length > 0;
   const shouldShowAction = showSectionAction && typeof onSectionAction === "function";
@@ -23,7 +25,9 @@ function MovieStrip({
         )}
       </div>
 
-      {hasMovies ? (
+      {isLoading ? (
+        <p className="section-empty">Loading {title.toLowerCase()}...</p>
+      ) : hasMovies ? (
         <div className="movie-strip">
           {movies.map((movie) => (
             <MovieCard
@@ -35,7 +39,7 @@ function MovieStrip({
           ))}
         </div>
       ) : (
-        <p className="section-empty">No movies to show here yet.</p>
+        <p className="section-empty">{emptyMessage}</p>
       )}
     </section>
   );

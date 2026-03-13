@@ -21,10 +21,12 @@ function TrendingPage() {
   const [movies, setMovies] = useState([]);
   const [visibleCount, setVisibleCount] = useState(MOVIES_PER_PAGE);
   const [wishlistIds, setWishlistIds] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
+        setIsLoading(true);
         let endpoint = "/api/movies"; // Default for 'all'
         if (activeFilter !== "all") {
           endpoint = `/api/movies/${activeFilter}`;
@@ -34,6 +36,8 @@ function TrendingPage() {
       } catch (error) {
         console.error(`Error fetching ${activeFilter} movies:`, error);
         setMovies([]);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -104,20 +108,26 @@ function TrendingPage() {
           ))}
         </div>
 
-        <div className="trending-grid">
-          {visibleMovies.map((movie) => (
-            <MovieCard
-              key={movie.id}
-              movie={movie}
-              primaryActionText="View Details"
-              onPrimaryAction={handleViewDetails}
-              secondaryActionText={
-                wishlistIds.includes(movie.id) ? "Added to Wishlist" : "Add to Wishlist"
-              }
-              onSecondaryAction={handleAddToWishlist}
-            />
-          ))}
-        </div>
+        {isLoading ? (
+          <p className="section-empty">Loading movies...</p>
+        ) : visibleMovies.length === 0 ? (
+          <p className="section-empty">No movies found for this filter.</p>
+        ) : (
+          <div className="trending-grid">
+            {visibleMovies.map((movie) => (
+              <MovieCard
+                key={movie.id}
+                movie={movie}
+                primaryActionText="View Details"
+                onPrimaryAction={handleViewDetails}
+                secondaryActionText={
+                  wishlistIds.includes(movie.id) ? "Added to Wishlist" : "Add to Wishlist"
+                }
+                onSecondaryAction={handleAddToWishlist}
+              />
+            ))}
+          </div>
+        )}
 
         {canLoadMore && (
           <div className="trending-load-wrap">

@@ -1,4 +1,4 @@
-function RecommendedSection({ movies, onRefresh }) {
+function RecommendedSection({ movies, onRefresh, isLoading = false }) {
   const hasMovies = Array.isArray(movies) && movies.length > 0;
   const canRefresh = typeof onRefresh === "function";
 
@@ -13,7 +13,9 @@ function RecommendedSection({ movies, onRefresh }) {
         )}
       </div>
 
-      {hasMovies ? (
+      {isLoading ? (
+        <p className="section-empty">Loading recommendations...</p>
+      ) : hasMovies ? (
         <div className="recommend-grid">
           {movies.map((movie) => (
             <article className="recommend-card" key={movie.title}>
