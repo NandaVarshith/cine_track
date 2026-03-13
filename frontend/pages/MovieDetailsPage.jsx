@@ -15,6 +15,9 @@ function MovieDetailsPage() {
   const [reviews, setReviews] = useState([]);
   const [reviewForm, setReviewForm] = useState({ rating: "8", comment: "" });
   const [reviewStatus, setReviewStatus] = useState({ loading: false, error: "" });
+  const [progressPercent, setProgressPercent] = useState(0);
+  const [progressStatus, setProgressStatus] = useState({ saving: false, error: "" });
+  const [similarMovies, setSimilarMovies] = useState([]);
 
   useEffect(() => {
     async function fetchMovieDetails() {
@@ -45,6 +48,22 @@ function MovieDetailsPage() {
   }, [id]);
 
   useEffect(() => {
+    async function fetchSimilarMovies() {
+      try {
+        const response = await api.get(`/api/movies/${id}/similar`);
+        setSimilarMovies(response.data || []);
+      } catch (error) {
+        console.error("Error fetching similar movies:", error);
+        setSimilarMovies([]);
+      }
+    }
+
+    if (id) {
+      fetchSimilarMovies();
+    }
+  }, [id]);
+
+  useEffect(() => {
     async function fetchWatchStatus() {
       try {
         const response = await api.get(`/api/watchlist/status/${id}`, {
@@ -60,6 +79,23 @@ function MovieDetailsPage() {
 
     if (id) {
       fetchWatchStatus();
+    }
+  }, [id]);
+
+  useEffect(() => {
+    async function fetchProgress() {
+      try {
+        const response = await api.get(`/api/progress/${id}`, { withCredentials: true });
+        setProgressPercent(response.data?.progressPercent ?? 0);
+      } catch (error) {
+        if (error?.response?.status === 404) {
+          setProgressPercent(0);
+        }
+      }
+    }
+
+    if (id) {
+      fetchProgress();
     }
   }, [id]);
 
@@ -99,6 +135,27 @@ function MovieDetailsPage() {
       if (error?.response?.status === 401) {
         navigate("/auth/login");
       }
+    }
+  }
+
+  async function handleSaveProgress() {
+    setProgressStatus({ saving: true, error: "" });
+    try {
+      await api.post(
+        "/api/progress",
+        { movieId: id, progressPercent },
+        { withCredentials: true }
+      );
+      setProgressStatus({ saving: false, error: "" });
+    } catch (error) {
+      if (error?.response?.status === 401) {
+        navigate("/auth/login");
+        return;
+      }
+      setProgressStatus({
+        saving: false,
+        error: error?.response?.data?.message || "Unable to save progress.",
+      });
     }
   }
 
@@ -183,6 +240,29 @@ function MovieDetailsPage() {
             </button>
             <button type="button" className="secondary-btn" onClick={handleMarkWatched}>
               {watchStatus === "WATCHED" ? "Watched" : "Mark as Watched"}
+            </button>
+          </div>
+          <div className="details-progress">
+            <label>
+              Progress: {progressPercent}%
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={progressPercent}
+                onChange={(event) => setProgressPercent(Number(event.target.value))}
+              />
+            </label>
+            {progressStatus.error && (
+              <p className="review-error">{progressStatus.error}</p>
+            )}
+            <button
+              type="button"
+              className="primary-btn"
+              onClick={handleSaveProgress}
+              disabled={progressStatus.saving}
+            >
+              {progressStatus.saving ? "Saving..." : "Save Progress"}
             </button>
           </div>
         </div>
@@ -295,7 +375,7 @@ function MovieDetailsPage() {
 
       <MovieStrip
         title="Similar Movies"
-        movies={movie.similarMovies || []}
+        movies={similarMovies}
         showSectionAction={false}
         onViewDetails={handleViewDetails}
       />

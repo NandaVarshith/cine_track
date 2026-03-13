@@ -1338,6 +1338,60 @@ a {
   background: rgba(255, 255, 255, 0.06);
 }
 
+.details-progress {
+  margin-top: 1.1rem;
+  max-width: 420px;
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(10, 16, 30, 0.78);
+  box-shadow: var(--glow);
+}
+
+.details-progress label {
+  display: grid;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: #d6e0f7;
+  font-weight: 600;
+}
+
+.details-progress input[type="range"] {
+  width: 100%;
+  appearance: none;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+}
+
+.details-progress input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(120deg, var(--blue), var(--purple));
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 16px rgba(66, 165, 255, 0.4);
+  cursor: pointer;
+}
+
+.details-progress input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(120deg, var(--blue), var(--purple));
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 16px rgba(66, 165, 255, 0.4);
+  cursor: pointer;
+}
+
+.details-progress .primary-btn {
+  width: fit-content;
+}
+
 .details-overview {
   margin-top: 2rem;
   display: grid;

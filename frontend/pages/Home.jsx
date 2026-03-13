@@ -8,11 +8,8 @@ import HomeNav from "../components/home/HomeNav.jsx";
 import MovieStrip from "../components/home/MovieStrip.jsx";
 import RecommendedSection from "../components/home/RecommendedSection.jsx";
 import { api } from "../src/api/client.js";
-import { useEffect , useState } from "react";
-import {
-  continueWatching,
-  featuredMovie,
-} from "../components/home/homeData.js";
+import { useEffect, useState } from "react";
+import { featuredMovie } from "../components/home/homeData.js";
 
 function Home() {
   const navigate = useNavigate();
@@ -21,37 +18,50 @@ function Home() {
     navigate(`/movie/${movie.id || "eclipse-protocol"}`);
   }
 
-  const [trendingMovies , setTrendingMovies] = useState([]);
-  const [recommendedMovies , setRecommendedMovies] = useState([]);
-  const [categoryRows , setCategoryRows] = useState({});
+  const [trendingMovies, setTrendingMovies] = useState([]);
+  const [recommendedMovies, setRecommendedMovies] = useState([]);
+  const [categoryRows, setCategoryRows] = useState({});
+  const [continueItems, setContinueItems] = useState([]);
 
-
-async function fetchTrendingMovies() {
-      try {
-        const response = await api.get("/api/movies/trending");
-        setTrendingMovies(response.data);
-      } catch (error) {
-        console.error('Error fetching trending movies:', error);
-      }
+  async function fetchTrendingMovies() {
+    try {
+      const response = await api.get("/api/movies/trending");
+      setTrendingMovies(response.data);
+    } catch (error) {
+      console.error("Error fetching trending movies:", error);
     }
+  }
 
   async function fetchRecommendedMovies() {
-      try {
-        const response = await api.get("/api/movies/recommended");
-        setRecommendedMovies(response.data);
-      } catch (error) {
-        console.error('Error fetching recommended movies:', error);
-      }
+    try {
+      const response = await api.get("/api/movies/recommended");
+      setRecommendedMovies(response.data);
+    } catch (error) {
+      console.error("Error fetching recommended movies:", error);
     }
+  }
 
   async function fetchCategoryRows() {
-      try {
-        const response = await api.get("/api/movies/categories");
-        setCategoryRows(response.data);
-      } catch (error) {
-        console.error('Error fetching category rows:', error);
-      }
+    try {
+      const response = await api.get("/api/movies/categories");
+      setCategoryRows(response.data);
+    } catch (error) {
+      console.error("Error fetching category rows:", error);
     }
+  }
+
+  async function fetchContinueWatching() {
+    try {
+      const response = await api.get("/api/progress", { withCredentials: true });
+      setContinueItems(response.data || []);
+    } catch (error) {
+      if (error?.response?.status === 401) {
+        setContinueItems([]);
+        return;
+      }
+      console.error("Error fetching continue watching:", error);
+    }
+  }
 
   async function handleAddToWishlist(movie) {
     if (!movie?.id) {
@@ -74,12 +84,12 @@ async function fetchTrendingMovies() {
   }
 
 
-  useEffect(()=>{
-  
-    fetchTrendingMovies();  
+  useEffect(() => {
+    fetchTrendingMovies();
     fetchRecommendedMovies();
     fetchCategoryRows();
-  },[]);
+    fetchContinueWatching();
+  }, []);
 
   return (
     <main className="cinetrack-page">
@@ -93,7 +103,10 @@ async function fetchTrendingMovies() {
         onAddToWishlist={handleAddToWishlist}
       />
       <RecommendedSection movies={recommendedMovies} />
-      <ContinueWatchingSection movies={continueWatching} />
+      <ContinueWatchingSection
+        items={continueItems}
+        onResume={(item) => handleViewDetails(item.movie)}
+      />
       
       
       {Object.entries(categoryRows).map(([rowTitle, rowMovies]) => (

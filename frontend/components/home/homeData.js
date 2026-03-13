@@ -87,30 +87,6 @@ export const recommendedMovies = [
   },
 ];
 
-export const continueWatching = [
-  {
-    id: "black-tides",
-    title: "Black Tides",
-    progress: 67,
-    poster:
-      "https://images.unsplash.com/photo-1485095329183-d0797cdc5676?auto=format&fit=crop&w=500&q=80",
-  },
-  {
-    id: "code-meridian",
-    title: "Code Meridian",
-    progress: 42,
-    poster:
-      "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=500&q=80",
-  },
-  {
-    id: "red-atlas",
-    title: "Red Atlas",
-    progress: 84,
-    poster:
-      "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=500&q=80",
-  },
-];
-
 export const categoryRows = [
   "Top Rated Movies",
   "Action Movies",
