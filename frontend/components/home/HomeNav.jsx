@@ -6,6 +6,13 @@ function HomeNav() {
   const location = useLocation();
   const [searchTerm, setSearchTerm] = useState("");
 
+  function isActive(path) {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname.startsWith(path);
+  }
+
   useEffect(() => {
     if (location.pathname !== "/search") {
       setSearchTerm("");
@@ -42,12 +49,22 @@ function HomeNav() {
       </form>
 
       <nav className="menu-links" aria-label="Main navigation">
-        <Link to="/">Home</Link>
-        <Link to="/trending">Trending</Link>
-        <Link to="/wishlist">Wishlist</Link>
-        <Link to="/chatbot">Chatbot</Link>
-        <Link to="/profile">Profile</Link>
-        <Link to="/auth/login">Login</Link>
+        <Link to="/" className={isActive("/") ? "is-active" : ""}>Home</Link>
+        <Link to="/trending" className={isActive("/trending") ? "is-active" : ""}>
+          Trending
+        </Link>
+        <Link to="/wishlist" className={isActive("/wishlist") ? "is-active" : ""}>
+          Wishlist
+        </Link>
+        <Link to="/chatbot" className={isActive("/chatbot") ? "is-active" : ""}>
+          Chatbot
+        </Link>
+        <Link to="/profile" className={isActive("/profile") ? "is-active" : ""}>
+          Profile
+        </Link>
+        <Link to="/auth/login" className={isActive("/auth") ? "is-active" : ""}>
+          Login
+        </Link>
       </nav>
 
       <Link className="avatar-btn" to="/profile" aria-label="Open profile">

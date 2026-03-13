@@ -101,8 +101,9 @@ function Home() {
         movies={trendingMovies}
         onViewDetails={handleViewDetails}
         onAddToWishlist={handleAddToWishlist}
+        onSectionAction={() => navigate("/trending")}
       />
-      <RecommendedSection movies={recommendedMovies} />
+      <RecommendedSection movies={recommendedMovies} onRefresh={fetchRecommendedMovies} />
       <ContinueWatchingSection
         items={continueItems}
         onResume={(item) => handleViewDetails(item.movie)}
