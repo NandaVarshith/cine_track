@@ -2,8 +2,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HomeFooter from "../components/home/HomeFooter.jsx";
 import HomeNav from "../components/home/HomeNav.jsx";
-import { getAssistantReply, quickPrompts } from "../components/chatbot/chatbotData.js";
+import { quickPrompts } from "../components/chatbot/chatbotData.js";
 import "../src/index.css";
+import { api } from "../src/api/client.js";
 
 function ChatbotPage() {
   const navigate = useNavigate();
@@ -41,22 +42,34 @@ function ChatbotPage() {
       movies: [],
     };
 
-    const assistantReply = getAssistantReply(trimmed);
-    const assistantMessage = {
-      id: nextMessageIdRef.current++,
-      role: "assistant",
-      text: assistantReply.text,
-      movies: assistantReply.movies,
-    };
-
     setMessages((prev) => [...prev, userMessage]);
     setInputValue("");
     setIsThinking(true);
 
-    setTimeout(() => {
-      setMessages((prev) => [...prev, assistantMessage]);
-      setIsThinking(false);
-    }, 450);
+    api
+      .post("/api/chatbot", { message: trimmed })
+      .then((response) => {
+        const data = response.data || {};
+        const assistantMessage = {
+          id: nextMessageIdRef.current++,
+          role: "assistant",
+          text: data.replyText || "Here are some recommendations.",
+          movies: Array.isArray(data.movies) ? data.movies : [],
+        };
+        setMessages((prev) => [...prev, assistantMessage]);
+      })
+      .catch(() => {
+        const assistantMessage = {
+          id: nextMessageIdRef.current++,
+          role: "assistant",
+          text: "Sorry, I couldn't fetch recommendations right now.",
+          movies: [],
+        };
+        setMessages((prev) => [...prev, assistantMessage]);
+      })
+      .finally(() => {
+        setIsThinking(false);
+      });
   }
 
   function handleSend(event) {
@@ -96,10 +109,10 @@ function ChatbotPage() {
                 <div className="chat-movie-grid">
                   {message.movies.map((movie) => (
                     <article className="chat-mini-card" key={`${message.id}-${movie.title}`}>
-                      <img src={movie.poster} alt={movie.title} loading="lazy" />
+                      <img src={movie.poster_url} alt={movie.title} loading="lazy" />
                       <div className="chat-mini-card-content">
                         <h3>{movie.title}</h3>
-                        <p>Rating {movie.rating}</p>
+                        <p>Rating {movie.rating ?? "N/A"}</p>
                         <button
                           type="button"
                           className="ghost-btn"
