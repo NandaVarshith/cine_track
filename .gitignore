@@ -4,6 +4,7 @@ frontend/dist/
 
 # Java / Maven
 backend/target/
+backend/data/
 
 # Environment files
 frontend/.env

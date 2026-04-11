@@ -1,0 +1,6 @@
+target
+.git
+.gitignore
+Dockerfile
+.env
+.mvn/wrapper/maven-wrapper.jar
