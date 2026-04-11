@@ -12,3 +12,6 @@ backend/.env
 # OS / editor
 .DS_Store
 Thumbs.db
+
+import_movies.py
+ml_service.py
