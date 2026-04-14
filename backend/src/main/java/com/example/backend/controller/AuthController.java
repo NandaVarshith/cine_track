@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping({"/auth", "/api/auth"})
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {"${app.cors.allowed-origins:http://localhost:5173}"}, allowCredentials = "true")
 public class AuthController {
 
     private final AuthService authService;
@@ -41,8 +41,8 @@ public class AuthController {
 
         ResponseCookie cookie = ResponseCookie.from("auth_token", token)
                 .httpOnly(true)
-                .secure(false)
-                .sameSite("Lax")
+                .secure(true)
+                .sameSite("None") // required for cross-site cookie (frontend on Vercel, backend on Render)
                 .path("/")
                 .maxAge(Duration.ofDays(1))
                 .build();
@@ -60,8 +60,8 @@ public class AuthController {
     public ResponseEntity<?> logout(HttpServletResponse response) {
         ResponseCookie cookie = ResponseCookie.from("auth_token", "")
                 .httpOnly(true)
-                .secure(false)
-                .sameSite("Lax")
+                .secure(true)
+                .sameSite("None")
                 .path("/")
                 .maxAge(0)
                 .build();
