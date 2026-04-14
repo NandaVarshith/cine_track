@@ -29,7 +29,10 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             FilterChain filterChain
     ) throws ServletException, IOException {
         if (SecurityContextHolder.getContext().getAuthentication() == null) {
-            String token = extractToken(request);
+            String token = extractAuthHeader(request);
+            if (token == null) {
+                token = extractTokenFromCookie(request);
+            }
             Optional<String> userId = jwtService.getUserIdFromToken(token);
             if (userId.isPresent()) {
                 UsernamePasswordAuthenticationToken authentication =
@@ -41,7 +44,15 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    private String extractToken(HttpServletRequest request) {
+    private String extractAuthHeader(HttpServletRequest request) {
+        String header = request.getHeader("Authorization");
+        if (header != null && header.startsWith("Bearer ")) {
+            return header.substring(7);
+        }
+        return null;
+    }
+
+    private String extractTokenFromCookie(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
         if (cookies == null) {
             return null;

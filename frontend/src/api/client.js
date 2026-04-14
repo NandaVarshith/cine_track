@@ -7,3 +7,9 @@ export const api = axios.create({
   // Send auth cookies (JWT) on cross-site requests to the backend.
   withCredentials: true,
 });
+
+// If a token is stored locally (set after login), send it as Bearer auth.
+const storedToken = localStorage.getItem("auth_token");
+if (storedToken) {
+  api.defaults.headers.common.Authorization = `Bearer ${storedToken}`;
+}

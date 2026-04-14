@@ -225,6 +225,8 @@ function ProfilePage() {
     setStatus({ loading: true, error: "" });
     try {
       await api.post("/api/auth/logout", {}, { withCredentials: true });
+      localStorage.removeItem("auth_token");
+      delete api.defaults.headers.common.Authorization;
       navigate("/auth/login");
     } catch (error) {
       setStatus({

@@ -54,7 +54,7 @@ function AuthPage() {
         );
       }
 
-      await api.post(
+      const loginResponse = await api.post(
         "/api/auth/login",
         {
           email: formValues.email,
@@ -62,6 +62,12 @@ function AuthPage() {
         },
         { withCredentials: true }
       );
+
+      const token = loginResponse?.data?.token;
+      if (token) {
+        localStorage.setItem("auth_token", token);
+        api.defaults.headers.common.Authorization = `Bearer ${token}`;
+      }
 
       navigate("/");
     } catch (error) {
