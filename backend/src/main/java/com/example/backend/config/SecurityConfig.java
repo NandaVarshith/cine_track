@@ -27,10 +27,8 @@ public class SecurityConfig {
     private final com.example.backend.security.JwtAuthFilter jwtAuthFilter;
     private final String allowedOrigins;
 
-    public SecurityConfig(
-            com.example.backend.security.JwtAuthFilter jwtAuthFilter,
-            @Value("${app.cors.allowed-origins:http://localhost:5173}") String allowedOrigins
-    ) {
+    public SecurityConfig(com.example.backend.security.JwtAuthFilter jwtAuthFilter,
+                          @Value("${app.cors.allowed-origins:http://localhost:5173}") String allowedOrigins) {
         this.jwtAuthFilter = jwtAuthFilter;
         this.allowedOrigins = allowedOrigins;
     }
@@ -57,7 +55,6 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        // Supports comma-separated origins via APP_CORS_ALLOWED_ORIGINS env var
         List<String> origins = Arrays.stream(allowedOrigins.split(","))
                 .map(String::trim)
                 .filter(s -> !s.isEmpty())
