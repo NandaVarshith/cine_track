@@ -3,7 +3,7 @@
 A complete beginner-friendly project with:
 
 - `frontend`: React + Vite
-- `backend`: Spring Boot REST API
+- `backend`: Node.js + Express REST API
 - Database: MongoDB
 
 ## Included Features
@@ -18,19 +18,19 @@ A complete beginner-friendly project with:
 ## Project Structure
 
 - `frontend/` React app
-- `backend/` Spring Boot API
+- `backend/` Express API
 
 ## Prerequisites
 
 - Node.js 20+
-- Java 17+
 - MongoDB (local or hosted)
 
 ## 1) Run Backend
 
 ```powershell
 cd backend
-mvnw.cmd spring-boot:run
+npm install
+npm run dev
 ```
 
 Backend runs on: `http://localhost:8080`
@@ -48,6 +48,8 @@ Optional env vars (recommended for non-dev):
 - `MONGODB_URI=mongodb://localhost:27017/movies`
 - `JWT_SECRET=change-me-to-a-long-random-secret-at-least-32-bytes`
 - `JWT_EXPIRATION_SECONDS=86400`
+- `APP_CORS_ALLOWED_ORIGINS=http://localhost:5173`
+- `GROQ_API_KEY=` for AI chatbot recommendations
 
 ## 2) Run Frontend
 
@@ -65,6 +67,9 @@ Frontend runs on: `http://localhost:5173`
 - `POST /movies` - create movie
 - `PUT /movies/{id}` - update movie
 - `DELETE /movies/{id}` - delete movie
+- `POST /auth/login` - login and receive JWT
+- `GET /watchlist` - authenticated watchlist
+- `POST /chatbot` - AI movie recommendations
 
 ## Frontend Environment
 

@@ -1,12 +1,8 @@
-FROM maven:3.9.9-eclipse-temurin-21 AS build
+FROM node:20-alpine
 WORKDIR /app
+COPY package*.json ./
+RUN npm install --omit=dev
 COPY . .
-# Build the Spring Boot jar without running tests
-RUN mvn -B package -DskipTests
-
-FROM eclipse-temurin:21-jre
-WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
 ENV PORT=8080
 EXPOSE 8080
-ENTRYPOINT ["java","-Dserver.port=${PORT}","-jar","app.jar"]
+CMD ["npm", "start"]
